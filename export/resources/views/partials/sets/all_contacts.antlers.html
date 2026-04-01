@@ -1,0 +1,77 @@
+{{ partial:section width="wide" }}
+    <div class="py-16 flex flex-col gap-28">
+        {{ collection:contact_areas scope="area" }}
+            <div class="flex flex-col gap-4">
+                <div class="editor">
+                    <h3>
+                        {{ area.title }}
+                    </h3>
+                </div>
+
+                <div class="grid gap-x-8 gap-y-14 sm:grid-cols-2 lg:grid-cols-3">
+                    {{ collection:contacts :contact_area:is="area.id" scope="contact" }}
+                        <div>
+                            <div class="flex justify-between gap-2 pb-4 border-b border-base-800">
+                                <div class="flex flex-col gap-3">
+                                    <h3 class="font-headline text-2xl">{{ contact.title }}</h3>
+                                    <div class="font-semibold leading-[1.3em]">
+                                        {{ contact.job_title }}
+                                    </div>
+                                </div>
+                                <div class="flex flex-col gap-1 pt-1">
+                                    <div class="w-20 h-20">
+                                        {{ if contact.portrait }}
+                                            <img
+                                                src="{{ contact.portrait | cdn_image }}"
+                                                alt="Potrait von {{ contact.title }}"
+                                                class="w-full h-full object-cover"
+                                            />
+                                        {{ /if }}
+                                    </div>
+                                    <a
+                                        href="/vcard/{{ contact.id }}"
+                                        download
+                                        class="flex items-center gap-2"
+                                    >
+                                        <i class="fa-solid fa-address-card text-xl"></i>
+                                        <div class="underline">vCard</div>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="pt-4 flex flex-col gap-1">
+                                {{ if contact.phone }}
+                                    <div>
+                                        Telefon:
+                                        <a
+                                            href="tel:{{ contact.phone }}"
+                                            class="underline"
+                                        >{{ contact.phone }}</a>
+                                    </div>
+                                {{ /if }}
+                                {{ if contact.fax }}
+                                    <div>
+                                        Fax:
+                                        <a
+                                            href="tel:{{ contact.fax }}"
+                                            class="underline"
+                                        >{{ contact.fax }}</a>
+                                    </div>
+                                {{ /if }}
+                                {{ if contact.email }}
+                                    <div>
+                                        <a
+                                            href="mailto:{{ contact.email }}"
+                                            class="underline"
+                                        >{{ contact.email }}</a>
+                                    </div>
+                                {{ /if }}
+                            </div>
+                        </div>
+                    {{ /collection:contacts }}
+                </div>
+            </div>
+        {{ /collection:contact_areas }}
+
+    </div>
+{{ /partial:section }}

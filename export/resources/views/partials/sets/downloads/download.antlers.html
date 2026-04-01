@@ -1,0 +1,30 @@
+<div class="flex flex-col gap-3 p-2 bg-base-100">
+    {{ if download.preview_image }}
+        <a
+            href="{{ download.file.url }}"
+            download
+            target="_blank"
+        >
+            <img
+                src="{{ download.preview_image | cdn_image('contain-max=1200x1200') }}"
+                alt="{{ download.file.alt }}"
+                class="w-full"
+            />
+        </a>
+    {{ /if }}
+    <div class="flex items-start gap-2">
+        <div>
+            <i class="fa-light text-2xl fa-file-{{ download.file.extension }}"></i>
+        </div>
+
+        <a
+            href="{{ download.file.url }}"
+            download
+            target="_blank"
+            class="leading-[1.1em] mt-1"
+        >
+            <span class="underline hyphens-auto">{{ download.title ?: download.file.filename | ucfirst }}</span>
+            <span class="text-xs whitespace-nowrap">({{ download.file.size | replace('.', ',') }})</span>
+        </a>
+    </div>
+</div>

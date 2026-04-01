@@ -1,0 +1,94 @@
+<div
+    class="relative w-full"
+    x-data="{
+        bgY: '0px',
+        init() {
+            
+            this.transformImage()
+            window.addEventListener('scroll', (e) => this.transformImage())
+        },
+        transformImage()
+        {
+            let scrollY = this.$refs.promoSection.getBoundingClientRect().top - window.innerHeight
+            const elemH  = this.$refs.promoSection.getBoundingClientRect().height
+            
+            if(scrollY < 0) {
+                scrollY = -scrollY
+
+                if(scrollY <= elemH) {
+                    let scrolled = 30 - ((scrollY/elemH) * 60)
+
+                    this.bgY = 'translateY('+scrolled+'px)'
+                }
+            }
+        }  
+    }"
+>
+    <div
+        x-ref="promoSection"
+        class="
+            relative h-100 lg:h-140 md:bg-fixed overflow-hidden
+            {{ if set.layer === 'light' }}
+            bg-base-200
+            {{ elseif set.layer === 'dark' }}
+            bg-base-800
+            {{ /if }}
+        "
+    >
+
+        <img
+            src="{{ set.bg_image | cdn_image }}"
+            alt="{{ set.bg_image.alt }}"
+            class="absolute w-full h-full object-cover scale-[150%]"
+            x-bind:style="{
+                transform: bgY
+            }"
+        />
+
+        <div class="
+            absolute inset-0 
+            {{ if set.layer === 'light' }}
+            bg-radial from-base-100/80 to-base-400/60
+            {{ elseif set.layer === 'dark' }}
+            bg-base-900/65 mix-blend-multiply
+            {{ /if }}
+        ">
+
+        </div>
+
+
+        <div class="z-20 h-full">
+            {{ partial:section width="wide" }}
+                <div class="h-full flex flex-col justify-center max-w-140">
+                    <div class="
+                        @container max-w-100 lg:max-w-150 inline-flex flex-col gap-4 lg:gap-8 
+                         {{ ['text-base-800' => set.layer === 'light', 'text-white' => set.layer === 'dark'] | classes }}
+                    ">
+                        <div class="font-headline text-4xl">
+                            {{ set.headline | nl2br }}
+                        </div>
+
+                        <div class="editor text-lg">
+                            {{ set.text }}
+                        </div>
+                        {{ if set.link }}
+                            <div class="flex">
+                                <a
+                                    href="{{ set.link }}"
+                                    {{ if set.link | is_external_url }}
+                                target="_blank"
+                            {{ /if }}
+                                    class="flex flex-col items-start"
+                                >
+                                    {{ partial:button :layer="set.layer" }}
+                                        {{ set.link_text ?: 'Mehr erfahren' }}
+                                    {{ /partial:button }}
+                                </a>
+                            </div>
+                        {{ /if }}
+                    </div>
+                </div>
+            {{ /partial:section }}
+        </div>
+    </div>
+</div>

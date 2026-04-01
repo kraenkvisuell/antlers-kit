@@ -1,0 +1,31 @@
+---
+hover: 'regular'
+mode: 'regular'
+layer: 'light'
+---
+
+<div class="
+    font-headline inline-flex items-start justify-center gap-3 text-center
+    px-10 @md:px-20 w-full
+    {{ if view:mode === 'regular' }}
+        pt-2 @md:pt-3 pb-1.5 @md:pb-2.5 border-2
+        {{ if view:layer === 'dark' }}
+        border-white hover:text-base-800 hover:border-base-800
+        {{ else }}
+        border-base-800
+        {{ /if }}
+    {{ /if }}
+    {{ if view:mode === 'regular' && view:hover !== 'none' }}
+    hover:bg-gradient-to-r from-base-400/90 via-base-200/90 to-base-400/90
+    {{ /if }}
+    {{ if view:mode === 'primary' }}
+    pt-2.5 @md:pt-3.5 pb-2 @md:pb-3
+    bg-gradient-to-r from-base-400/90 via-base-200/90 to-base-400/90
+    hover:text-white hover:bg-base-800 hover:bg-none
+    {{ /if }}
+">
+    <span class="text-lg @md:text-xl leading-[1.2em]">
+        <span>{{ slot }}</span> <span class="inline-block text-2xl leading-0 translate-y-0.5">»</span>
+    </span>
+
+</div>

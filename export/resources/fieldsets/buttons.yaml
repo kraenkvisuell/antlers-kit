@@ -1,0 +1,20 @@
+title: Buttons
+fields:
+  -
+    handle: buttons
+    field:
+      collapse: accordion
+      button_label: 'Button hinzufügen'
+      type: replicator
+      display: Buttons
+      localizable: false
+      sets:
+        neue_setgruppe:
+          display: 'Neue Setgruppe'
+          sets:
+            button_set:
+              display: Button
+              icon: link
+              fields:
+                -
+                  import: button

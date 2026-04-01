@@ -1,0 +1,18 @@
+<li class="
+    font-headline text-xl underline-offset-6 decoration-3
+    {{ ['underline underline-offset-6 decoration-3' => is_current] | classes }}">
+    {{ if url }}
+        <a
+            href="{{ url }}"
+            class="block py-1"
+        >
+    {{ else }}
+        <span class="block py-1">
+    {{ /if }}
+    {{ title }}
+    {{ if url }}
+        </a>
+    {{ else }}
+        </span>
+    {{ /if }}
+</li>

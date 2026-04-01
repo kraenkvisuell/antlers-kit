@@ -1,0 +1,20 @@
+tree:
+  -
+    id: d1164b21-6e7c-4c7d-b4c6-303b555f3fb6
+    title: Ipsum
+    children:
+      -
+        id: 0477bb90-d16f-43e3-97b0-18087a632229
+        entry: 72846eb4-114d-4e90-b48b-609d10188b7e
+      -
+        id: ff05df71-8621-4cd1-9054-9aeaacbbe14f
+        entry: da385716-8c2c-4b1f-81d9-363707b51974
+      -
+        id: b77002c5-82b8-4802-a88a-bbf70ec79f83
+        entry: 4a020d65-c423-446a-b3c1-ff486f1e68c3
+  -
+    id: b30649bc-fb14-4c9c-a2b4-eb3a405e0b61
+    entry: 853f849e-a059-402d-bf8c-b81d93a7ecd2
+  -
+    id: a50c933c-07da-4e2e-916a-55f00fc5e280
+    entry: 74d50153-f84a-4921-b6b5-67f3101ac6df

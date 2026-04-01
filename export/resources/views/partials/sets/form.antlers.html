@@ -1,0 +1,10 @@
+{{ partial:section width="wide" }}
+    <div class="py-16 flex flex-col gap-30">
+        <div class="flex flex-col gap-14">
+            {{ partial:headline }}
+            <div>
+                {{ livewire:generic-form :handle="set.form.handle" :form="set.form" }}
+            </div>
+        </div>
+    </div>
+{{ /partial:section }}

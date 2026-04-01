@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="{{ site:short_locale }}">
+
+<head>
+    <meta charset="utf-8">
+    <meta
+        http-equiv="X-UA-Compatible"
+        content="IE=edge"
+    >
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1"
+    >
+
+    {{ seo_pro:meta }}
+    {{ favicons:favicons }}
+    {{ if environment == 'production' }}
+        <meta
+            name="google-site-verification"
+            content="GSmFfi7z9m5TPFs88AXp3bu-Q_YaJxlPqK2UYRSiMFc"
+        >
+
+        <!-- Fathom - beautiful, simple website analytics -->
+        <script
+            src="https://cdn.usefathom.com/script.js"
+            data-site="WHFMABOS"
+            defer
+        ></script>
+        <!-- / Fathom -->
+    {{ /if }}
+    <!--
+    /**
+    * @license
+    * MyFonts Webfont Build ID 561140
+    *
+    * The fonts listed in this notice are subject to the End User License
+    * Agreement(s) entered into by the website owner. All other parties are
+    * explicitly restricted from using the Licensed Webfonts(s).
+    *
+    * You may obtain a valid license from one of MyFonts official sites.
+    * http://www.fonts.com
+    * http://www.myfonts.com
+    * http://www.linotype.com
+    *
+    */
+    -->
+
+    {{ livewire:styles }}
+    {{ vite src="resources/js/site.js|resources/css/site.css" }}
+</head>
+
+<body
+    class="font-default text-base-800 leading-normal h-full"
+    x-data="layout"
+>
+    <header class="fixed top-0 left-0 w-full z-20">
+        {{ partial:secondary-navigation }}
+    </header>
+
+    <nav class="fixed top-0 left-0 w-full z-20">
+        {{ partial:mobile-navigation }}
+    </nav>
+
+    <header class="hidden lg:block fixed top-10 left-0 w-full z-20">
+        {{ partial:main-navigation }}
+    </header>
+
+    <main>
+        {{ template_content }}
+    </main>
+
+    <div>
+        {{ partial:footer-products }}
+    </div>
+
+    <div>
+        {{ partial:footer-promos }}
+    </div>
+
+    <div>
+        {{ partial:footer }}
+    </div>
+
+    {{ stack:modals }}
+    {{ livewire:scripts }}
+    <script>
+        document.addEventListener('alpine:init', () => {
+            Alpine.data('layout', () => ({
+                menuIsVisible: false,
+                scrolledABit: false,
+                heroTranslateY: 0,
+                heroOpacity: 100,
+                visibleModal: '',
+                visibleFixedBgIds: [],
+                init() {
+                    this.reactOnScroll()
+                    window.addEventListener('scroll', (e) => {
+                        this.reactOnScroll()
+                    })
+                },
+
+                showModal(modalId) {
+                    this.visibleModal = modalId
+                    document.body.classList.add('overflow-y-hidden')
+                    document.body.classList.remove('overflow-y-scroll')
+
+                },
+
+                hideModal() {
+                    this.visibleModal = ''
+                    document.body.classList.remove('overflow-y-hidden')
+                    document.body.classList.add('overflow-y-scroll')
+                },
+
+                addVisibleFixedBgId(id) {
+                    this.visibleFixedBgIds.push(id)
+                },
+
+                removeVisibleFixedBgId(id) {
+                    this.visibleFixedBgIds = _.filter(this.visibleFixedBgIds, (item) => item != id)
+                },
+
+                reactOnScroll() {
+                    this.scrolledABit = window.scrollY > 100
+
+                    this.heroTranslateY = window.scrollY / 5
+                    this.heroOpacity = (window.innerHeight - window.scrollY) / window
+                        .innerHeight
+                },
+
+                toggleMenu() {
+                    if (!this.menuIsVisible) {
+                        this.openMenu()
+                    } else {
+                        this.closeMenu()
+                    }
+                },
+                openMenu() {
+                    document.body.classList.add('overflow-y-hidden')
+                    document.body.classList.remove('overflow-y-scroll')
+                    this.menuIsVisible = true
+                },
+                closeMenu() {
+                    document.body.classList.remove('overflow-y-hidden')
+                    document.body.classList.add('overflow-y-scroll')
+                    this.menuIsVisible = false
+                }
+            }))
+        })
+    </script>
+</body>
+
+</html>

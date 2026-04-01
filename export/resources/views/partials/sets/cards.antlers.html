@@ -1,0 +1,14 @@
+{{ partial:section width="wide" :has_paper_bg="set.has_paper_bg ? 'true' : 'false'" }}
+    <div class="py-15">
+        <div class="
+            grid md:grid-cols-2 gap-x-8 gap-y-16
+            {{ if set.max_cols === '3' }}
+                lg:grid-cols-3
+            {{ /if }}
+        ">
+            {{ set.cards scope="card" }}
+                {{ partial:sets.cards.card }}
+            {{ /set.cards }}
+        </div>
+    </div>
+{{ /partial:section }}

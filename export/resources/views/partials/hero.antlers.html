@@ -1,0 +1,47 @@
+<div
+    class="
+        w-full fixed z-10
+        {{ if hero_size === 'fullscreen' }}
+        h-svh min-h-70
+        {{ elseif hero_size === 'medium' }}
+        h-120 md:h-160 lg:h-190 xl:h-210 2xl:h-230 3xl:h-260
+        {{ else }}
+        h-120 md:h-140 lg:h-150
+        {{ /if }}
+    "
+    x-bind:class="{
+    'pointer-events-none': heroTranslateY > 50,
+    'pointer-events-auto': heroTranslateY <= 50,
+    }"
+    x-bind:style="{
+        transform: 'translateY(-'+heroTranslateY+'px)',
+        opacity: heroOpacity,
+    }"
+>
+    <div
+        id="hero-swiper"
+        class="swiper h-full w-full"
+    >
+        <div class="swiper-wrapper">
+            {{ hero_slides scope="slide" }}
+                {{ partial:hero.slide }}
+            {{ /hero_slides }}
+        </div>
+
+        <div class="swiper-pagination hidden lg:block">
+
+        </div>
+
+        <div class="swiper-button-prev">
+            <div class="hidden landscape:block">
+                <i class="fa-sharp fa-solid fa-angle-left text-[35px]"></i>
+            </div>
+        </div>
+
+        <div class="swiper-button-next">
+            <div class="hidden landscape:block">
+                <i class="fa-sharp fa-solid fa-angle-right text-[35px]"></i>
+            </div>
+        </div>
+    </div>
+</div>

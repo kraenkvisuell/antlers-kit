@@ -1,0 +1,21 @@
+title: Getränke
+icon: labs-idea-experimental-flask
+template: default
+layout: layout
+taxonomies:
+  - drink_categories
+revisions: false
+sort_dir: asc
+date_behavior:
+  past: null
+  future: null
+preview_targets:
+  -
+    label: Entry
+    url: '{permalink}'
+    refresh: true
+inject:
+  seo: false
+structure:
+  root: false
+  max_depth: 1

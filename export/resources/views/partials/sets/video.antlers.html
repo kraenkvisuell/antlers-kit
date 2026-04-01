@@ -1,0 +1,9 @@
+{{ partial:section width="wide" }}
+    <div class="py-15">
+        <div class="video-container">
+            {{ partial:ratio-container :ratio="set.ratio" }}
+                {{ set.embed_code }}
+            {{ /partial:ratio-container }}
+        </div>
+    </div>
+{{ /partial:section }}

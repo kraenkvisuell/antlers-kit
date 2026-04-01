@@ -1,0 +1,15 @@
+<?php
+
+namespace Kraenkvisuell\Favicons\Http\Controllers\CP;
+
+use Statamic\Facades\Collection;
+
+class CollectionDefaultsController extends BaseSectionDefaultsController
+{
+    protected static $sectionType = 'collections';
+
+    protected function getSectionItem($handle)
+    {
+        return Collection::find($handle);
+    }
+}

@@ -1,0 +1,19 @@
+title: Button
+fields:
+  -
+    handle: link_text
+    field:
+      type: text
+      display: Link-Text
+      localizable: false
+      width: 50
+  -
+    handle: link
+    field:
+      collections:
+        - pages
+      container: assets
+      type: link
+      display: Link
+      localizable: false
+      width: 50

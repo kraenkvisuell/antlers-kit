@@ -1,0 +1,32 @@
+<div class="
+    relative bg-radial w-full from-base-100 to-base-300
+    h-150
+">
+    <div class="absolute top-12 left-0 w-full flex flex-col items-center text-center gap-3 pointer-events-none">
+        <div class="font-headline text-4xl">{{ settings.headline_products | nl2br }}</div>
+        <div class="text-lg font-semibold">{{ settings.subline_products | nl2br }}</div>
+    </div>
+
+    <div
+        id="footer-swiper"
+        class="swiper h-full w-full"
+    >
+        <div class="swiper-wrapper">
+            {{ collection:drinks scope="drink" }}
+                {{ partial:footer-products.product }}
+            {{ /collection:drinks }}
+        </div>
+
+        <div class="swiper-button-prev">
+            <div class="hidden landscape:block">
+                <i class="fa-sharp fa-solid fa-angle-left text-[35px]"></i>
+            </div>
+        </div>
+
+        <div class="swiper-button-next">
+            <div class="hidden landscape:block">
+                <i class="fa-sharp fa-solid fa-angle-right text-[35px]"></i>
+            </div>
+        </div>
+    </div>
+</div>

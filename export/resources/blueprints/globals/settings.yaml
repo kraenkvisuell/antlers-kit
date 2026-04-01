@@ -1,0 +1,213 @@
+title: Einstellungen
+tabs:
+  main:
+    display: Hauptbereich
+    sections:
+      -
+        fields:
+          -
+            handle: website_bg
+            field:
+              container: assets
+              max_files: 1
+              type: assets
+              display: Hintergrundbild
+              width: 50
+          -
+            handle: paper_bg
+            field:
+              container: assets
+              max_files: 1
+              type: assets
+              display: Papier-Hintergrundbild
+              width: 50
+          -
+            handle: main_logo
+            field:
+              container: assets
+              max_files: 1
+              type: assets
+              display: Haupt-Logo
+              width: 50
+          -
+            handle: secondary_logo
+            field:
+              container: assets
+              max_files: 1
+              type: assets
+              display: 'Kleineres Logo'
+              width: 50
+          -
+            handle: mobile_logo_icon
+            field:
+              container: assets
+              max_files: 1
+              type: assets
+              display: 'Mobil-Logo Signet'
+              width: 50
+          -
+            handle: mobile_logo
+            field:
+              container: assets
+              max_files: 1
+              type: assets
+              display: Mobil-Logo
+              width: 50
+      -
+        display: Footer
+        fields:
+          -
+            handle: headline_products
+            field:
+              type: textarea
+              display: 'Headline Produkte'
+              width: 50
+          -
+            handle: subline_products
+            field:
+              type: textarea
+              display: 'Subline Produkte'
+              width: 50
+          -
+            handle: footer_promos
+            field:
+              collapse: accordion
+              fullscreen: false
+              button_label: 'Neue Sektion hinzufügen'
+              type: replicator
+              display: Footer-Promo-Sektionen
+              sets:
+                neue_setgruppe:
+                  display: 'Neue Setgruppe'
+                  sets:
+                    promo_section:
+                      display: Promo-Sektion
+                      fields:
+                        -
+                          import: promo_section
+          -
+            handle: partners
+            field:
+              collapse: accordion
+              type: replicator
+              display: Partner
+              sets:
+                neue_setgruppe:
+                  display: 'Neue Setgruppe'
+                  sets:
+                    partner:
+                      display: Partner
+                      fields:
+                        -
+                          handle: logo
+                          field:
+                            container: assets
+                            max_files: 1
+                            type: assets
+                            display: Logo
+                        -
+                          handle: link
+                          field:
+                            type: link
+                            display: Link
+                        -
+                          handle: title
+                          field:
+                            type: text
+                            display: Titel
+      -
+        display: Erklärungen
+        fields:
+          -
+            handle: explanation_alcohol
+            field: bard_with_sets.text
+            config:
+              buttons:
+                - h3
+                - h4
+                - bold
+                - italic
+                - unorderedlist
+                - orderedlist
+                - anchor
+                - table
+                - underline
+                - strikethrough
+                - superscript
+                - subscript
+                - horizontalrule
+                - alignleft
+                - aligncenter
+                - alignright
+              display: 'Erklärung Alkoholgehalt'
+              width: 50
+          -
+            handle: explanation_extract
+            field: bard_with_sets.text
+            config:
+              buttons:
+                - h3
+                - h4
+                - bold
+                - italic
+                - unorderedlist
+                - orderedlist
+                - anchor
+                - table
+                - underline
+                - strikethrough
+                - superscript
+                - subscript
+                - horizontalrule
+                - alignleft
+                - aligncenter
+                - alignright
+              display: 'Erklärung Stammwürze'
+              width: 50
+          -
+            handle: explanation_bitter
+            field: bard_with_sets.text
+            config:
+              buttons:
+                - h3
+                - h4
+                - bold
+                - italic
+                - unorderedlist
+                - orderedlist
+                - anchor
+                - table
+                - underline
+                - strikethrough
+                - superscript
+                - subscript
+                - horizontalrule
+                - alignleft
+                - aligncenter
+                - alignright
+              display: 'Erklärung Bittereinheiten'
+              width: 50
+          -
+            handle: explanation_color
+            field: bard_with_sets.text
+            config:
+              buttons:
+                - h3
+                - h4
+                - bold
+                - italic
+                - unorderedlist
+                - orderedlist
+                - anchor
+                - table
+                - underline
+                - strikethrough
+                - superscript
+                - subscript
+                - horizontalrule
+                - alignleft
+                - aligncenter
+                - alignright
+                - image
+              display: 'Erklärung Bierfarbe'
+              width: 50

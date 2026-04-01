@@ -1,0 +1,41 @@
+updatable: true
+export_paths:
+  - .env.example
+  - app/Console/Commands/StarterKit
+  - app/Fieldtypes
+  - app/Models/User.php
+  - app/Modifiers/CdnImage.php
+  - app/Providers
+  - addons/kraenkvisuell
+  - content
+  - config/auth.php
+  - config/filesystems.php
+  - config/prism.php
+  - config/services.php
+  - config/site.php
+  - config/statamic
+  - database
+  - lang
+  - resources/blueprints
+  - resources/css/site.css
+  - resources/views
+  - public/build
+  - public/img
+  - public/vendor
+  - public/robots.txt
+  - package.json
+  - vite.config.js
+dependencies:
+  el-schneider/statamic-auto-alt-text: ^2.0
+  laravel/horizon: ^5.45
+  league/flysystem-aws-s3-v3: ^3.31
+  livewire/livewire: ^4.2
+  statamic/eloquent-driver: ^5.1
+  statamic/seo-pro: ^7.0
+  statamic-rad-pack/runway: ^9.0
+  symfony/http-client: ^8.0
+  symfony/postmark-mailer: ^8.0
+  varsuite/statamic-resend-form-submissions: ^1.1
+dependencies_dev:
+  fruitcake/laravel-debugbar: ^4.0
+  laravel-lang/lang: ^15.19

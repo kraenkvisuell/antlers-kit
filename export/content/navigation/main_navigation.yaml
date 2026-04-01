@@ -1,0 +1,5 @@
+title: Hauptnavigation
+collections:
+  - pages
+  - categories
+max_depth: 3

@@ -1,0 +1,216 @@
+title: Favicons
+fields:
+  -
+    handle: favicons_section
+    field:
+      type: section
+      display: Favicons
+      instructions: 'Nicht alle müssen ausgewählt werden - der Browser wählt immer das nächstbeste aus. Es sollte aber mindestens ein großes (144 - 512) und ein kleineres (32 bis 96) Favicon hinterlegt sein.'
+      localizable: false
+      hide_display: true
+  -
+    handle: light_mode
+    field:
+      type: section
+      display: 'Light Mode'
+      instructions: 'Favicons für den Light Mode bzw. normalen Modus (meist mit dunklem Hintergrund oder ein dunkleres Zeichen auf Transparent)'
+      localizable: false
+  -
+    handle: favicon_512x512
+    field:
+      max_files: 1
+      container: assets
+      folder: favicons
+      restrict: true
+      show_set_alt: false
+      type: assets
+      display: 'Favicon 512x512'
+      localizable: false
+      width: 25
+  -
+    handle: favicon_256x256
+    field:
+      max_files: 1
+      container: assets
+      folder: favicons
+      restrict: true
+      show_set_alt: false
+      type: assets
+      display: 'Favicon 256x256'
+      localizable: false
+      width: 25
+  -
+    handle: favicon_192x192
+    field:
+      max_files: 1
+      container: assets
+      folder: favicons
+      restrict: true
+      show_set_alt: false
+      type: assets
+      display: 'Favicon 192x192'
+      localizable: false
+      width: 25
+  -
+    handle: favicon_144x144
+    field:
+      max_files: 1
+      container: assets
+      folder: favicons
+      restrict: true
+      show_set_alt: false
+      type: assets
+      display: 'Favicon 144x144'
+      localizable: false
+      width: 25
+  -
+    handle: favicon_96x96
+    field:
+      max_files: 1
+      container: assets
+      folder: favicons
+      restrict: true
+      show_set_alt: false
+      type: assets
+      display: 'Favicon 96x96'
+      localizable: false
+      width: 25
+  -
+    handle: favicon_48x48
+    field:
+      max_files: 1
+      container: assets
+      folder: favicons
+      restrict: true
+      show_set_alt: false
+      type: assets
+      display: 'Favicon 48x48'
+      localizable: false
+      width: 25
+  -
+    handle: favicon_32x32
+    field:
+      max_files: 1
+      container: assets
+      folder: favicons
+      restrict: true
+      show_set_alt: false
+      type: assets
+      display: 'Favicon 32x32'
+      localizable: false
+      width: 25
+  -
+    handle: favicon_16x16
+    field:
+      max_files: 1
+      container: assets
+      folder: favicons
+      restrict: true
+      show_set_alt: false
+      type: assets
+      display: 'Favicon 16x16'
+      localizable: false
+      width: 25
+  -
+    handle: dark_mode
+    field:
+      type: section
+      display: 'Dark Mode'
+      instructions: 'Favicons für den Dark Mode (meist mit hellem Hintergrund oder ein helles Zeichen auf Transparent)'
+      localizable: false
+  -
+    handle: favicon_dark_512x512
+    field:
+      max_files: 1
+      container: assets
+      folder: favicons
+      restrict: true
+      show_set_alt: false
+      type: assets
+      display: 'Favicon dark 512x512'
+      localizable: false
+      width: 25
+  -
+    handle: favicon_dark_256x256
+    field:
+      max_files: 1
+      container: assets
+      folder: favicons
+      restrict: true
+      show_set_alt: false
+      type: assets
+      display: 'Favicon dark 256x256'
+      localizable: false
+      width: 25
+  -
+    handle: favicon_dark_192x192
+    field:
+      max_files: 1
+      container: assets
+      folder: favicons
+      restrict: true
+      show_set_alt: false
+      type: assets
+      display: 'Favicon dark 192x192'
+      localizable: false
+      width: 25
+  -
+    handle: favicon_dark_144x144
+    field:
+      max_files: 1
+      container: assets
+      folder: favicons
+      restrict: true
+      show_set_alt: false
+      type: assets
+      display: 'Favicon dark 144x144'
+      localizable: false
+      width: 25
+  -
+    handle: favicon_dark_96x96
+    field:
+      max_files: 1
+      container: assets
+      folder: favicons
+      restrict: true
+      show_set_alt: false
+      type: assets
+      display: 'Favicon dark 96x96'
+      localizable: false
+      width: 25
+  -
+    handle: favicon_dark_48x48
+    field:
+      max_files: 1
+      container: assets
+      folder: favicons
+      restrict: true
+      show_set_alt: false
+      type: assets
+      display: 'Favicon dark 48x48'
+      localizable: false
+      width: 25
+  -
+    handle: favicon_dark_32x32
+    field:
+      max_files: 1
+      container: assets
+      folder: favicons
+      restrict: true
+      show_set_alt: false
+      type: assets
+      display: 'Favicon dark 32x32'
+      localizable: false
+      width: 25
+  -
+    handle: favicon_dark_16x16
+    field:
+      max_files: 1
+      container: assets
+      folder: favicons
+      restrict: true
+      show_set_alt: false
+      type: assets
+      display: 'Favicon dark 16x16'
+      localizable: false
+      width: 25

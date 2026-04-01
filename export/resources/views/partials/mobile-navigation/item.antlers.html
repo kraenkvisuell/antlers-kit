@@ -1,0 +1,14 @@
+{{ if url }}
+    <a
+        href="{{ url }}"
+        class="{{ ['underline underline-offset-6 decoration-3' => is_current] | classes }}"
+    >
+{{ else }}
+    <span class="{{ ['underline underline-offset-6 decoration-3' => is_current] | classes }}">
+{{ /if }}
+{{ title }}
+{{ if url }}
+    </a>
+{{ else }}
+    </span>
+{{ /if }}

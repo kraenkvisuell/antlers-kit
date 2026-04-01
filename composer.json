@@ -1,0 +1,24 @@
+{
+    "name": "kraenkvisuell/antlers-kit",
+    "extra": {
+        "statamic": {
+            "name": "Antlers Starter Kit",
+            "description": "Statamic Starter Kit for Kraenk Visuell"
+        },
+        "laravel": {
+            "providers": [
+                "Kraenkvisuell\\AntlersStarterKit\\ServiceProvider"
+            ]
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Kraenkvisuell\\AntlersStarterKit\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests"
+        }
+    }
+}

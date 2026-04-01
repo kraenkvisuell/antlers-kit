@@ -1,0 +1,24 @@
+---
+ratio: '16:9'
+---
+
+<div class="
+    relative w-full flex-grow-0 flex-shrink-0
+    {{ if view:ratio === '2:1' }}
+    aspect-2/1
+    {{ elseif view:ratio === '4:3' }}
+    aspect-4/3
+    {{ elseif view:ratio === '1:1' }}
+    aspect-1/1
+    {{ elseif view:ratio === '3:4' }}
+    aspect-3/4
+    {{ elseif view:ratio === '9:16' }}
+    aspect-9/16
+    {{ elseif view:ratio === '1:2' }}
+    aspect-1/2
+    {{ else }}
+    aspect-16/9
+    {{ /if }}
+">
+    <div class="absolute inset-0">{{ slot }}</div>
+</div>

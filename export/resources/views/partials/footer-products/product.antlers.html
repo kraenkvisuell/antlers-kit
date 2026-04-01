@@ -1,0 +1,20 @@
+<div class="swiper-slide pt-40">
+    <a
+        href="{{ drink.category.url }}#{{ drink.slug }}"
+        class="w-full h-full flex flex-col gap-4"
+    >
+        <div class="w-full h-[80%] flex items-center justify-center">
+            {{ if drink.images.0 }}
+                <img
+                    src="{{ drink.images.0 | cdn_image }}"
+                    alt="{{ drink.title }} Flasche/Dose"
+                    class="w-full h-full object-contain"
+                />
+            {{ /if }}
+        </div>
+
+        <div class="text-center font-headline text-lg">
+            {{ drink.title }}
+        </div>
+    </a>
+</div>

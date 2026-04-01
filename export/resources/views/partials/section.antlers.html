@@ -1,0 +1,18 @@
+---
+width: 'regular'
+has_paper_bg: 'false'
+---
+
+<section
+    class="relative z-10 w-full h-full flex justify-center px-4 sm:px-8 md:px-12 overflow-visible bg-cover bg-center"
+    {{if view:has_paper_bg == 1 }} 
+    style="background-image:url('{{ settings.paper_bg | cdn_image('contain-max=2000x2000') }}')"
+    {{ /if }}
+>
+    <div class="
+            relative w-full overflow-visible
+            {{ ['max-w-screen-2xl' => view:width === 'widest', 'max-w-screen-lg' => view:width === 'wide', 'max-w-screen-md' => view:width === 'regular'] | classes }}
+        ">
+        {{ slot }}
+    </div>
+</section>

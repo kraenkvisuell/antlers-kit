@@ -1,0 +1,29 @@
+{{ partial:section width="wide" }}
+    <div class="py-16 flex flex-col gap-30">
+        <div class="flex flex-col gap-14">
+            {{ partial:headline }}
+            {{ if set.links }}
+                <div class="mx-auto w-full max-w-120 flex flex-col items-stretch gap-4 @container">
+                    {{ set.links scope="link" }}
+                        <a
+                            class="block"
+                            href="{{ link.link.url }}"
+                            {{ if link.link.link_type != 'entry' }}
+                            target="_blank"
+                            {{ /if }}
+                            {{ if link.link.link_type == 'asset' }}
+                            download
+                            {{ /if }}
+                        >
+                            {{ partial:button mode="primary" }}
+                                {{ link.link_text ?: 'Mehr erfahren' }}
+                            {{ /partial:button }}
+                        </a>
+                    {{ /set.links }}
+                </div>
+            {{ /if }}
+        </div>
+
+
+    </div>
+{{ /partial:section }}

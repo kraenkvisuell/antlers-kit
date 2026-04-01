@@ -1,0 +1,110 @@
+tabs:
+  main:
+    display: Hauptbereich
+    sections:
+      -
+        fields:
+          -
+            handle: subject
+            field:
+              options:
+                -
+                  key: Anfrage
+                  value: Anfrage
+                -
+                  key: Anmeldung
+                  value: Anmeldung
+              inline: true
+              default: Anfrage
+              type: radio
+          -
+            handle: vorname
+            field:
+              type: text
+              display: Vorname
+              width: 50
+              validate:
+                - required
+              character_limit: 20
+          -
+            handle: nachname
+            field:
+              type: text
+              display: Nachname
+              width: 50
+              validate:
+                - required
+          -
+            handle: address_1
+            field:
+              type: text
+              display: 'Straße und Hausnummer'
+              width: 50
+          -
+            handle: address_2
+            field:
+              type: text
+              display: 'PLZ und Ort'
+              width: 50
+          -
+            handle: emailaddress
+            field:
+              input_type: email
+              type: text
+              display: E-Mail
+              width: 50
+              validate:
+                - required
+                - email
+          -
+            handle: telefon
+            field:
+              input_type: tel
+              type: text
+              display: Telefon
+              width: 50
+              validate:
+                - required
+          -
+            handle: fax
+            field:
+              input_type: tel
+              type: text
+              display: Fax
+              width: 50
+          -
+            handle: participants
+            field:
+              type: text
+              display: Teilnehmerzahl
+              width: 50
+          -
+            handle: groupname
+            field:
+              type: text
+              display: Gruppenname
+          -
+            handle: time
+            field:
+              input_type: date
+              type: text
+              display: Wunschtermin
+              width: 50
+          -
+            handle: day_time
+            field:
+              type: text
+              display: Uhrzeit
+              width: 50
+          -
+            handle: number
+            field:
+              type: text
+              display: 'Freundeskreis-Mitgliedsnummer (falls vorhanden)'
+          -
+            handle: nachricht
+            field:
+              type: textarea
+              display: 'Ihre Nachricht'
+      -
+        display: 'Neuer Abschnitt'

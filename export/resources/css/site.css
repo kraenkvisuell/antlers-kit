@@ -1,0 +1,178 @@
+@import "@awesome.me/kit-5832591731/icons/css/all.css";
+@import "swiper/css";
+@import "swiper/css/navigation";
+@import "swiper/css/pagination";
+@import "tailwindcss";
+
+@plugin "@tailwindcss/typography";
+@source "../views";
+@source "../css";
+@source "../../content";
+
+@font-face {
+    font-family: 'Carosserie';
+    font-display: swap;
+    font-weight: 400;
+    src: url('/resources/fonts/Carrosserie.woff2') format('woff2');
+}
+
+@font-face {
+    font-display: swap;
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: url('/resources/fonts/open-sans-v44-latin-regular.woff2') format('woff2');
+}
+
+@font-face {
+    font-display: swap;
+    font-family: 'Open Sans';
+    font-style: italic;
+    font-weight: 400;
+    src: url('/resources/fonts/open-sans-v44-latin-italic.woff2') format('woff2');
+}
+
+@font-face {
+    font-display: swap;
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 600;
+    src: url('/resources/fonts/open-sans-v44-latin-600.woff2') format('woff2');
+}
+
+@font-face {
+    font-display: swap;
+    font-family: 'Open Sans';
+    font-style: italic;
+    font-weight: 600;
+    src: url('/resources/fonts/open-sans-v44-latin-600italic.woff2') format('woff2');
+}
+
+@font-face {
+    font-display: swap;
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 800;
+    src: url('/resources/fonts/open-sans-v44-latin-800.woff2') format('woff2');
+}
+
+@font-face {
+    font-display: swap;
+    font-family: 'Open Sans';
+    font-style: italic;
+    font-weight: 800;
+    src: url('/resources/fonts/open-sans-v44-latin-800italic.woff2') format('woff2');
+}
+
+
+@theme {
+
+    --font-headline: "Carosserie", "sans-serif";
+    --font-default: "Open Sans", "sans-serif";
+
+    --text-2xl: 25px;
+    --text-3xl: 33px;
+    --text-4xl: 40px;
+    --text-6xl: 57px;
+
+    --color-base-50: oklch(0.964 0.0509 92.55);
+    --color-base-100: oklch(0.963 0.0257 67.52);
+    --color-base-200: oklch(0.887 0.0913 75.82);
+    --color-base-300: oklch(0.8744 0.089 72.82);
+    --color-base-400: oklch(0.7621 0.1227 67.89);
+    --color-base-500: oklch(0.5914 0.1227 67.89);
+    --color-base-600: oklch(0.5004 0.1053 58.01);
+    --color-base-700: oklch(0.3913 0.0845 64.24);
+    --color-base-800: oklch(0.3341 0.0656 58.68);
+    --color-base-900: oklch(0.3472 0.0641 55.26);
+
+    --color-light-highlight: oklch(0.8139 0.1166 80.73);
+
+    --swiper-theme-color: var(--color-base-800);
+    --swiper-pagination-color: var(--color-light-highlight);
+    --swiper-navigation-color: var(--color-base-800);
+    --swiper-pagination-bullet-size: 14px;
+    --swiper-pagination-bullet-height: var(--swiper-pagination-bullet-size);
+    --swiper-pagination-bullet-inactive-opacity: 1;
+    --swiper-pagination-bullet-inactive-color: transparent;
+    --swiper-pagination-bottom: 10px;
+}
+
+.editor {
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5 {
+        @apply font-headline mt-[1.5em] mb-[0.75em];
+
+        &:first-child {
+            @apply mt-0;
+        }
+    }
+
+    h1 {
+        @apply text-5xl;
+    }
+
+    h2 {
+        @apply text-4xl;
+    }
+
+    h3 {
+        @apply text-3xl;
+    }
+
+    h4 {
+        @apply text-2xl;
+    }
+
+    h5 {
+        @apply text-xl;
+    }
+
+    h6 {
+        @apply text-lg;
+    }
+
+    p,
+    ul {
+        @apply mb-[0.5em];
+
+        &:last-child {
+            @apply mb-0;
+        }
+    }
+
+    ul {
+        @apply list-disc pl-5;
+    }
+
+    strong,
+    b {
+        @apply font-semibold;
+    }
+
+    a {
+        @apply underline;
+    }
+
+}
+
+.swiper-pagination-bullet {
+    @apply border-2 border-light-highlight;
+    @apply border-2 border-light-highlight;
+}
+
+.video-container iframe {
+    @apply w-full h-full;
+}
+
+.iframe-container {
+    @apply relative w-full h-full;
+}
+
+.iframe-container iframe {
+    @apply w-full h-full;
+}

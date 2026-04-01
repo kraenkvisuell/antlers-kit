@@ -1,0 +1,12 @@
+<div class="
+     relative
+    {{ if has_hero && hero_size === 'fullscreen' }}
+        pt-[100dvh]
+    {{ elseif has_hero && hero_size === 'medium' }}
+        pt-120 md:pt-160 lg:pt-190 xl:pt-210 2xl:pt-230 3xl:pt-260
+    {{ elseif has_hero }}
+        pt-120 md:pt-140 lg:pt-150
+    {{ /if }}
+">
+    {{ slot }}
+</div>

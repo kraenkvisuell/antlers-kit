@@ -1,0 +1,75 @@
+<div class="lg:hidden w-full h-[55px] z-20">
+    {{ partial:section width="wide" }}
+        <div class="h-full w-full flex justify-center items-center">
+            <a
+                href="/"
+                aria-label="kleines Icon-Logo Homepage-Link"
+            >
+                {{ settings.mobile_logo }}
+                    <img
+                        class="w-26"
+                        src="{{ url }}"
+                        alt="{{ alt }}"
+                    />
+                {{ /settings.mobile_logo }}
+            </a>
+
+
+            <div class="absolute top-3.5 left-0">
+                <a
+                    href="/"
+                    aria-label="kleines Text-Logo Homepage-Link"
+                >
+                    {{ settings.mobile_logo_icon }}
+                        <img
+                            class="w-10"
+                            src="{{ url }}"
+                            alt="{{ alt }}"
+                        />
+                    {{ /settings.mobile_logo_icon }}
+                </a>
+            </div>
+        </div>
+
+        <div class="absolute top-[9px] right-0">
+            {{ partial:hamburger }}
+        </div>
+    {{ /partial:section }}
+</div>
+
+<div
+    class="
+        lg:hidden fixed w-full h-full z-10 bg-gradient-to-r from-base-400/90 via-base-200/90 to-base-400/90
+        transition-opacity duration-400
+    "
+    x-bind:class="{
+        'pointer-events-none opacity-0': !menuIsVisible,
+        'pointer-events-auto opacity-100': menuIsVisible,
+    }"
+    x-cloak
+>
+    <div class="px-4 py-5 h-full overflow-scroll">
+        <div class="flex flex-col gap-12 items-center pb-20">
+            <ul class="flex flex-col gap-4 items-center">
+                {{ nav:main_navigation }}
+                    <li class="font-headline text-center text-2xl">
+                        {{ partial:mobile-navigation.item }}
+                        {{ if children }}
+                            <ul>
+                                {{ children }}
+                                    {{ partial:mobile-navigation.child-item }}
+                                {{ /children }}
+                            </ul>
+                        {{ /if }}
+                    </li>
+                {{ /nav:main_navigation }}
+            </ul>
+
+            <ul class="flex flex-col items-center">
+                {{ nav:secondary_navigation }}
+                    {{ partial:mobile-navigation.child-item }}
+                {{ /nav:secondary_navigation }}
+            </ul>
+        </div>
+    </div>
+</div>

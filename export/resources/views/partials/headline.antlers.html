@@ -1,0 +1,19 @@
+{{ if set.headline || set.topline || set.subline }}
+    <hgroup class="text-center flex flex-col items-center gap-3">
+        {{ if set.topline }}
+            <p class="text-lg font-semibold">
+                {{ set.topline | nl2br }}
+            </p>
+        {{ /if }}
+        {{ if set.headline }}
+            <h2 class="font-headline text-4xl">
+                {{ set.headline | nl2br }}
+            </h2>
+        {{ /if }}
+        {{ if set.subline }}
+            <p class="text-lg font-semibold">
+                {{ set.subline | nl2br }}
+            </p>
+        {{ /if }}
+    </hgroup>
+{{ /if }}

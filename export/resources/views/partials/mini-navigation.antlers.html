@@ -1,0 +1,33 @@
+{{ nav:main_navigation }}
+    {{ if children }}
+        {{ children }}
+            {{ if is_parent && children }}
+                <div class="relative z-10 py-12 bg-white">
+                    {{ partial:section }}
+                        <div class="border border-base-800 flex flex-col md:flex-row">
+                            {{ children }}
+                                <div class="flex-1 {{ if index > 0 }} border-l border-base-800 {{ /if }}">
+                                    <a
+                                        href="{{ url }}"
+                                        class="
+                                            font-headline text-center w-full block h-full py-4
+                                            {{ if is_current }}
+                                            bg-gradient-to-r
+                                            {{ else }}
+                                            hover:bg-gradient-to-r
+                                            {{/if}}
+                                             from-base-400/90 via-base-200/90 to-base-400/90
+                                        "
+                                    >
+                                        {{ title }}
+                                    </a>
+                                </div>
+                            {{ /children }}
+                        </div>
+                    {{ /partial:section }}
+                </div>
+            {{ /if }}
+        {{ /children }}
+    {{ /if }}
+    </li>
+{{ /nav:main_navigation }}

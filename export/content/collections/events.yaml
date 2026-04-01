@@ -1,0 +1,17 @@
+title: Events
+icon: calendar
+template: templates/default
+layout: layouts/main
+revisions: false
+sort_by: dates
+sort_dir: asc
+date_behavior:
+  past: null
+  future: null
+preview_targets:
+  -
+    label: Entry
+    url: '{permalink}'
+    refresh: true
+inject:
+  seo: false

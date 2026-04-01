@@ -1,0 +1,15 @@
+---
+tranformedClasses: ''
+top: ''
+---
+
+<div
+    class="
+        absolute {{ top }} left-1 h-[4px] w-8 transition-all
+        bg-gradient-to-r from-base-400/90 via-base-200/90 to-base-400/90
+    "
+    x-bind:class="{
+        'opacity-100': !menuIsVisible,
+        '{{ tranformedClasses }}': menuIsVisible,
+    }"
+></div>

@@ -1,0 +1,99 @@
+<div class="
+        swiper-slide pt-[55px] lg:pt-10 
+        bg-[linear-gradient(to_right,theme(colors.base.400),theme(colors.base.200),theme(colors.base.200),theme(colors.base.400))]
+    ">
+    <div class="
+        relative w-full bg-cover bg-fixed
+        {{ if hero_size === 'fullscreen' }}
+            portrait:h-4/7 landscape:h-full 
+        {{ else }}
+            h-full
+        {{ /if }}
+    ">
+        {{ if slide.image }}
+            <img
+                src="{{ slide.image | cdn_image }}"
+                alt="{{ slide.image.alt }}"
+                class="
+                w-full h-full object-cover
+                {{ if vertical_align === 'top' }}
+                    object-top
+                {{ elseif vertical_align === 'bottom' }}
+                    object-bottom
+                {{ /if }}
+            "
+            >
+        {{ /if }}
+        {{ if slide.layer === 'dark' }}
+            <div class="absolute inset-0 bg-base-900/65 mix-blend-multiply">
+
+            </div>
+        {{ else }}
+            <div class="absolute w-full h-full inset-0 overflow-hidden">
+                {{ partial:section width="wide" }}
+                    <div class="
+                        bg-radial w-full h-full from-base-200/50 to-base-200/0
+                        scale-300 translate-y-[100%] translate-x-[-50%]
+                    ">
+
+                    </div>
+                {{ /partial:section }}
+            </div>
+        {{ /if }}
+    </div>
+
+    <div class="absolute inset-0">
+        {{ partial:section width="wide" }}
+            <div class="
+                w-full h-full flex flex-col 
+                {{ if hero_size === 'fullscreen' }}
+                    pb-4 landscape:pb-30 justify-end 
+                {{ else }}
+                    pt-30 md:pt-50 pb-4 justify-center
+                {{ /if }}
+                {{ if slide.layer === 'dark' }}
+                    text-white
+                {{ /if }}
+            ">
+
+                <div class="@container max-w-110 lg:max-w-150 inline-flex flex-col gap-4 lg:gap-8">
+                    {{ if slide.topline }}
+                        <div class="font-semibold text-lg sm:text-xl lg:text-2xl">
+                            {{ slide.topline }}
+                        </div>
+                    {{ /if }}
+                    <div class="font-headline text-3xl sm:text-4xl lg:text-6xl">
+                        {{ if index == 0 }}
+                            <h1>
+                        {{ else }}
+                            <h2>
+                        {{ /if }}
+                        {{ slide.headline | nl2br }}
+                        {{ if index == 0 }}
+                            </h1>
+                        {{ else }}
+                            </h2>
+                        {{ /if }}
+                    </div>
+                    {{ if slide.subline }}
+                        <div class="md:text-lg">
+                            {{ slide.subline | nl2br }}
+                        </div>
+                    {{ /if }}
+                    {{ if slide.link }}
+                        <div class="flex">
+                            <a
+                                href="{{ slide.link }}"
+                                class="flex flex-col items-start"
+                            >
+                                {{ partial:button }}
+                                    {{ slide.link_text ?: 'Mehr erfahren' }}
+                                {{ /partial:button }}
+                            </a>
+                        </div>
+                    {{ /if }}
+                </div>
+            </div>
+        {{ /partial:section }}
+    </div>
+</div>

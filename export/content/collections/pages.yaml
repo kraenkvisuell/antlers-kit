@@ -1,0 +1,22 @@
+title: Seiten
+icon: collections
+template: templates/default
+layout: layouts/main
+revisions: false
+route: '{parent_uri}/{slug}'
+sort_dir: asc
+date_behavior:
+  past: null
+  future: null
+preview_targets:
+  -
+    label: Entry
+    url: '{permalink}'
+    refresh: true
+inject:
+  favicons:
+    light_512_icon:
+      - favicons/icon-512-dark.png
+structure:
+  root: true
+  max_depth: 1

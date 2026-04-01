@@ -1,0 +1,20 @@
+title: Karte
+fields:
+  -
+    handle: file
+    field:
+      max_files: 1
+      container: assets
+      type: assets
+      display: Image
+      instructions: 'Bilddatei oder MP4'
+      localizable: false
+      validate:
+        - 'mimes:jpg,jpeg,png,gif,webp,webm,mp4,svg'
+  -
+    import: ratio
+  -
+    handle: text
+    field: main_bard.text
+  -
+    import: buttons

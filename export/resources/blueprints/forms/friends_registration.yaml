@@ -1,0 +1,172 @@
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: gift
+            field:
+              type: toggle
+              display: 'Ich möchte die Mitgliedschaft verschenken'
+          -
+            handle: birthday
+            field:
+              input_type: date
+              type: text
+              display: 'Geburtstag des Mitgliedes'
+              validate:
+                - required
+          -
+            handle: confection_size
+            field:
+              options:
+                -
+                  key: S
+                  value: 'S - Small'
+                -
+                  key: M
+                  value: 'M - Medium'
+                -
+                  key: L
+                  value: 'L - Large'
+                -
+                  key: XL
+                  value: 'XL - Extra Large'
+                -
+                  key: XXL
+                  value: 'XXL - 2-fach Extra Large'
+                -
+                  key: XXXL
+                  value: 'XXXL - 3-fach Extra Large'
+              default: S
+              type: select
+              display: 'Konfektionsgröße des Mitgliedes'
+              validate:
+                - required
+          -
+            handle: gender
+            field:
+              options:
+                -
+                  key: M
+                  value: Herr
+                -
+                  key: W
+                  value: Frau
+              default: M
+              type: select
+              display: Anrede
+              validate:
+                - required
+          -
+            handle: firstname
+            field:
+              type: text
+              display: Vorname
+              validate:
+                - required
+          -
+            handle: lastname
+            field:
+              type: text
+              display: Nachname
+              validate:
+                - required
+          -
+            handle: street
+            field:
+              type: text
+              display: Straße
+              validate:
+                - required
+          -
+            handle: streetno
+            field:
+              type: text
+              display: Hausnummer
+              validate:
+                - required
+          -
+            handle: zip
+            field:
+              type: text
+              display: PLZ
+              validate:
+                - required
+          -
+            handle: city
+            field:
+              type: text
+              display: Ort
+              validate:
+                - required
+          -
+            handle: email
+            field:
+              input_type: email
+              type: text
+              display: E-Mail-Adresse
+              validate:
+                - required
+          -
+            handle: phone
+            field:
+              type: text
+              display: 'Telefonnummer für Rückfragen'
+          -
+            handle: html_feld
+            field:
+              html: |-
+                <p>My-Club GmbH | Am Brambusch 22 | 44536 Lünen<br>
+                  Gläubiger-Identifikationsnummer DE03ZZZ00000361725</p>
+
+                <h4>SEPA-Lastschriftmandat</h4>
+
+                <p>Ich ermächtige die My-Club GmbH, Zahlungen von meinem Konto mittels Lastschrift einzuziehen. Zugleich weise ich mein Kreditinstitut an, die von der My-Club GmbH auf mein Konto gezogenen Lastschriften einzulösen. Hinweis: Ich kann innerhalb von acht Wochen, beginnend mit dem Belastungsdatum, die Erstattung des belasteten Betrages verlangen. Es gelten dabei die mit meinem Kreditinstitut vereinbarten Bedingungen.</p>
+              type: html
+              display: 'HTML Feld'
+      -
+        display: Bankverbindung
+        instructions: 'Der Jahresbeitrag soll von folgendem Konto abgebucht werden:'
+        fields:
+          -
+            handle: account_owner
+            field:
+              type: text
+              display: Kontoinhaber
+              validate:
+                - required
+          -
+            handle: iban
+            field:
+              type: text
+              display: IBAN
+              validate:
+                - required
+          -
+            handle: bic
+            field:
+              type: text
+              display: BIC
+      -
+        fields:
+          -
+            handle: comment
+            field:
+              type: textarea
+              display: Kommentare/Hinweise
+      -
+        fields:
+          -
+            handle: accept
+            field:
+              type: toggle
+              display: 'Ich habe die AGB gelesen und akzeptiere diese.'
+              validate:
+                - accepted
+          -
+            handle: newsletter
+            field:
+              type: toggle
+              display: 'Ich möchte regelmäßig über Neuigkeiten und Angebote, die der Fanclub (Braustübl Freundeskreis) bietet, informiert werden und abonniere den kostenlosen Newsletter. Die Bedingungen* hierzu habe ich gelesen und akzeptiert.'

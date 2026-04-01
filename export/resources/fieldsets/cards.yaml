@@ -1,0 +1,20 @@
+title: Karten
+fields:
+  -
+    handle: cards
+    field:
+      collapse: accordion
+      button_label: 'Karte hinzufügen'
+      type: replicator
+      display: Karten
+      localizable: false
+      sets:
+        neue_setgruppe:
+          display: 'Neue Setgruppe'
+          sets:
+            card_set:
+              display: Karte
+              icon: money-atm-card
+              fields:
+                -
+                  import: card

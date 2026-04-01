@@ -1,0 +1,35 @@
+title: Haupt-Bard
+fields:
+  -
+    handle: text
+    field:
+      buttons:
+        - h2
+        - h3
+        - h4
+        - h5
+        - h6
+        - bold
+        - italic
+        - unorderedlist
+        - orderedlist
+        - anchor
+        - table
+        - underline
+        - strikethrough
+        - small
+        - superscript
+        - subscript
+        - horizontalrule
+        - alignleft
+        - aligncenter
+        - alignright
+      toolbar_mode: floating
+      fullscreen: false
+      remove_empty_nodes: trim
+      link_collections:
+        - pages
+      container: assets
+      type: bard
+      display: Text
+      instructions: '"cmd + click" in eine Zeile öffnet direkt die Editor-Buttons, um z.B. eine Tabelle o.ä. einzufügen.'

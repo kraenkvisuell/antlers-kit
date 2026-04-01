@@ -1,0 +1,34 @@
+{{ partial:section width="wide" }}
+    <div class="py-15 grid md:grid-cols-2 gap-8 md:gap-0">
+        {{ set.timeline scope="item" }}
+            {{ if item.type === 'text' }}
+                <div class="
+                    flex items-center @container 
+                    {{ if item.has_light_bg }}
+                    bg-radial w-full h-full from-base-100 to-base-300
+                    {{ /if }}
+                ">
+                    <div class="editor text-lg px-6 py-8 @md:px-12 @md:py-16">
+                        {{ item.text scope="bard" }}
+                            {{ if bard.type === 'text' }}
+                                {{ bard.text }}
+                            {{ /if }}
+                        {{ /item.text }}
+                    </div>
+                </div>
+            {{ else }}
+                <div class="
+                    {{ if item.has_light_bg }}
+                    bg-radial w-full h-full from-base-100 to-base-300
+                    {{ /if }}
+                ">
+                    <img
+                        src="{{ item.image | cdn_image('contain-max:1200x1200') }}"
+                        alt="{{ item.image.alt }}"
+                        class="w-full h-auto"
+                    />
+                </div>
+            {{ /if }}
+        {{ /set.timeline }}
+    </div>
+{{ /partial:section }}

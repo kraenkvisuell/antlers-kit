@@ -1,0 +1,53 @@
+<div
+    class="transition-transform duration-700 relative bg-cover bg-center h-[55px] lg:h-10 flex items-center bg-base-800"
+    x-bind:class="{
+        'lg:translate-y-0': !scrolledABit,
+        'lg:-translate-y-10': scrolledABit,
+    }"
+    style="background-image:url('{{ settings.website_bg | cdn_image('cover-max=1500x200') }}')"
+>
+    {{ partial:section width="wide" }}
+        <nav class="hidden lg:flex h-full w-full items-center justify-end gap-6 text-sm font-semibold">
+            {{ nav:secondary_navigation }}
+                <a
+                    href="{{ url }}"
+                    class="text-white hover:text-base-200/90 transition-color duration-700"
+                >
+                    {{ title }}
+                </a>
+            {{ /nav:secondary_navigation }}
+        </nav>
+
+        <div class="lg:hidden h-full w-full flex justify-center items-center">
+
+            <a
+                href="/"
+                aria-label="zweites kleines Icon-Logo Homepage-Link"
+            >
+                {{ settings.mobile_logo }}
+                    <img
+                        class="w-26"
+                        src="{{ url }}"
+                        alt="{{ alt }}"
+                    />
+                {{ /settings.mobile_logo }}
+            </a>
+
+
+            <div class="absolute top-3.5 left-0">
+                <a
+                    href="/"
+                    aria-label="zweites kleines Icon-Logo Homepage-Link"
+                >
+                    {{ settings.mobile_logo_icon }}
+                        <img
+                            class="w-10"
+                            src="{{ url }}"
+                            alt="{{ alt }}"
+                        />
+                    {{ /settings.mobile_logo_icon }}
+                </a>
+            </div>
+        </div>
+    {{ /partial:section }}
+</div>

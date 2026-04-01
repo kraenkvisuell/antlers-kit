@@ -1,0 +1,19 @@
+title: Bezugsquellen
+icon: map-search
+template: default
+layout: layout
+taxonomies:
+  - supplier_categories
+revisions: false
+slugs: false
+sort_dir: asc
+date_behavior:
+  past: null
+  future: null
+preview_targets:
+  -
+    label: Entry
+    url: '{permalink}'
+    refresh: true
+inject:
+  seo: false

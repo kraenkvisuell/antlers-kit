@@ -1,0 +1,61 @@
+title: Getränkekategorie
+tabs:
+  main:
+    display: Hauptbereich
+    sections:
+      -
+        fields:
+          -
+            handle: title
+            field:
+              type: text
+              required: true
+              validate:
+                - required
+  sidebar:
+    display: Sidebar
+    sections:
+      -
+        fields:
+          -
+            handle: slug
+            field:
+              type: slug
+              required: true
+              validate:
+                - required
+                - 'max:200'
+  Favicons:
+    sections:
+      -
+        fields:
+          -
+            handle: favicons
+            field:
+              type: favicons
+              listable: false
+              display: Favicons
+  'SEO Meta':
+    sections:
+      -
+        fields:
+          -
+            handle: seo
+            field:
+              type: seo_pro
+              listable: false
+              display: SEO
+  'SEO Previews':
+    sections:
+      -
+        fields:
+          -
+            handle: seo_previews
+            field:
+              type: seo_pro_previews
+              listable: false
+              display: 'SEO Previews'
+              localizable: true
+              hide_display: true
+              unless:
+                seo.enabled: 'equals false'

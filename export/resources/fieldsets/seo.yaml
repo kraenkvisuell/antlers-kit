@@ -1,0 +1,34 @@
+title: SEO
+fields:
+  -
+    handle: browser_title
+    field:
+      type: text
+      display: 'Browser Title'
+      localizable: true
+      character_limit: 60
+  -
+    handle: meta_description
+    field:
+      character_limit: 160
+      type: textarea
+      display: 'Meta Description'
+      localizable: true
+  -
+    handle: og_image
+    field:
+      max_files: 1
+      container: assets
+      type: assets
+      display: 'Open Graph Image'
+      instructions: 'Empfohlen: 1200 x 630 px und unter 1 MB.'
+      localizable: false
+  -
+    handle: twitter_image
+    field:
+      max_files: 1
+      container: assets
+      type: assets
+      display: 'Twitter Card Image'
+      instructions: 'Empfohlen: 1200 x 675  px und unter 1 MB. Wenn leer, wird das Open Graph Image genommen.'
+      localizable: false

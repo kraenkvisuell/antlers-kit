@@ -1,0 +1,29 @@
+title: Slideshow
+fields:
+  -
+    import: ratio
+  -
+    handle: slides
+    field:
+      collapse: accordion
+      fullscreen: false
+      button_label: 'Slide hinuzfügen'
+      type: replicator
+      display: Slides
+      localizable: false
+      sets:
+        neue_setgruppe:
+          display: 'Neue Setgruppe'
+          sets:
+            slide:
+              display: Slide
+              icon: media-image-picture-orientation
+              fields:
+                -
+                  handle: file
+                  field: image.file
+                  config:
+                    validate:
+                      - 'mimes:jpg,jpeg,png,gif,webp,webm,mp4,svg'
+                -
+                  import: captions

@@ -1,0 +1,25 @@
+{{ partial:section width="wide" }}
+    <div class="flex justify-center 
+    {{ partial:set-margin-classes }}
+    ">
+        <div class="
+            {{ if set.image_size === 'mini' }}
+                w-75
+                {{ elseif set.image_size === 'small' }}
+                w-100
+                {{ elseif set.image_size === 'medium' }}
+                w-150
+                {{ else }}
+                w-full
+            {{ /if }}
+        ">
+            {{ if set.file }}
+                <img
+                    src="{{ set.file | cdn_image }}"
+                    alt="{{ set.file.alt }}"
+                    class="w-full h-auto"
+                />
+            {{ /if }}
+        </div>
+    </div>
+{{ /partial:section }}

@@ -1,0 +1,70 @@
+title: Headline
+fields:
+  -
+    handle: has_topline
+    field:
+      type: toggle
+      display: 'Hat Topline'
+      localizable: false
+      width: 25
+  -
+    handle: topline
+    field:
+      buttons:
+        - bold
+        - italic
+        - strikethrough
+        - superscript
+        - subscript
+      toolbar_mode: floating
+      fullscreen: false
+      remove_empty_nodes: trim
+      type: bard
+      display: Topline
+      localizable: false
+      width: 75
+      inline: true
+      if:
+        has_topline: 'equals true'
+  -
+    handle: headline
+    field:
+      buttons:
+        - bold
+        - italic
+        - strikethrough
+        - superscript
+        - subscript
+      toolbar_mode: floating
+      fullscreen: false
+      remove_empty_nodes: trim
+      type: bard
+      display: Headline
+      localizable: false
+      inline: true
+  -
+    handle: has_subline
+    field:
+      type: toggle
+      display: 'Hat Subline'
+      localizable: false
+      width: 25
+  -
+    handle: subline
+    field:
+      buttons:
+        - bold
+        - italic
+        - strikethrough
+        - superscript
+        - subscript
+      toolbar_mode: floating
+      fullscreen: false
+      remove_empty_nodes: trim
+      type: bard
+      display: Subline
+      localizable: false
+      width: 75
+      inline: true
+      if:
+        has_subline: 'equals true'

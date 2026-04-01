@@ -1,0 +1,32 @@
+title: Captions
+fields:
+  -
+    handle: caption
+    field:
+      buttons:
+        - bold
+        - italic
+        - anchor
+      toolbar_mode: floating
+      fullscreen: false
+      allow_source: false
+      remove_empty_nodes: trim
+      type: bard
+      display: Bildunterschrift
+      localizable: true
+      width: 50
+  -
+    handle: credits
+    field:
+      buttons:
+        - bold
+        - italic
+        - anchor
+      toolbar_mode: floating
+      fullscreen: false
+      allow_source: false
+      remove_empty_nodes: trim
+      type: bard
+      display: Credits
+      localizable: true
+      width: 50

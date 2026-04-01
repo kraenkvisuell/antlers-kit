@@ -1,0 +1,57 @@
+title: Haupt-Inhalt
+fields:
+  -
+    handle: content
+    field:
+      collapse: accordion
+      fullscreen: false
+      type: replicator
+      display: Inhalt
+      instructions: 'Füge einzelne Sektionen untereinander - sie können später umsortiert, bearbeitet, versteckt oder gelöscht werden.'
+      localizable: true
+      sets:
+        sets:
+          display: Sets
+          sets:
+            text:
+              display: Text
+              icon: text-formatting-initial-letter
+              fields:
+                -
+                  import: headline
+                -
+                  import: main_bard
+                -
+                  import: buttons
+            image:
+              display: Bild
+              icon: media-image-picture-orientation
+              fields:
+                -
+                  import: headline
+                -
+                  import: image
+            video:
+              display: 'Video (Embed)'
+              icon: social-youtube
+              fields:
+                -
+                  import: headline
+                -
+                  import: embed_video
+            cards:
+              display: Karten
+              icon: dashboard-layout
+              fields:
+                -
+                  import: headline
+                -
+                  import: cards
+            slideshow:
+              display: Slideshow
+              icon: media-image-picture-gallery
+              fields:
+                -
+                  import: headline
+                -
+                  import: slideshow

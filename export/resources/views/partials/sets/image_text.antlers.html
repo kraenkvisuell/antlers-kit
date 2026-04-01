@@ -1,0 +1,48 @@
+{{ partial:section width="wide" }}
+    <div class="
+        flex
+        {{ partial:set-margin-classes }}
+        {{ if set.image_size === 'mini'}}
+            gap-4
+        {{ else }}
+            gap-8
+        {{ /if }}
+        {{ if set.element_order === 'text_image'}}
+            flex-col-reverse md:flex-row-reverse
+        {{ else }}
+            flex-col md:flex-row 
+        {{ /if }}
+    ">
+        <div class="
+            {{ if set.image_size === 'mini'}}
+                w-30 flex-grow-0 mt-1.5
+            {{ else }}
+                flex-1 md:max-w-120 
+            {{ /if }}
+        ">
+            {{ if set.mode === 'code' }}
+                <div class="relative w-full aspect-square">
+                    <div class="absolute inset-0">
+                        <div class="iframe-container">
+                            {{ set.embed_code }}
+                        </div>
+                    </div>
+                </div>
+            {{ elseif set.file }}
+                <img
+                    src="{{ set.file | cdn_image }}"
+                    alt="{{ set.file.alt }}"
+                    class="w-full h-auto"
+                />
+            {{ /if }}
+        </div>
+
+        <div class="editor flex-1 text-lg hyphens-auto lg:hyphens-none">
+            {{ set.text }}
+                {{ if type === 'text' && text }}
+                    {{ text }}
+                {{ /if }}
+            {{ /set.text }}
+        </div>
+    </div>
+{{ /partial:section }}

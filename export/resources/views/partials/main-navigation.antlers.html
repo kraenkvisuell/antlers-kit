@@ -1,0 +1,77 @@
+<div
+    class="
+        absolute w-full transition-position 
+        duration-700 h-20 flex items-center bg-gradient-to-r from-base-400/90 via-base-200/90 to-base-400/90
+    "
+    x-bind:class="{
+        'top-0': !scrolledABit,
+        '-top-10': scrolledABit,
+    }"
+>
+    {{ partial:section width="wide" }}
+        <div class="h-full w-full flex justify-between gap-2">
+            <div class="h-full">
+                {{ partial:logo }}
+            </div>
+
+            <nav class="hidden md:flex h-full">
+                <ul class="h-full flex w-full items-center justify-end gap-6 font-headline text-xl lg:text-2xl mt-0.5">
+                    {{ nav:main_navigation }}
+                        <li class="
+                                group h-full flex items-center relative hover:text-base-600 
+                                transition-color duration-700 leading-[1em]
+                                {{ ['underline underline-offset-6 decoration-3' => is_current || is_parent] | classes }}
+                            ">
+                            {{ if url }}
+                                <a href="{{ url }}">
+                            {{ else }}
+                                <span>
+                            {{ /if }}
+                            {{ title }}
+                            {{ if url }}
+                                </a>
+                            {{ else }}
+                                </span>
+                            {{ /if }}
+                            {{ if children }}
+                                <div class="
+                                    absolute top-[78px] left-0 w-full flex justify-center transition-opacity duration-700
+                                    opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto
+                                ">
+                                    <div class="w-px flex justify-center overflow-visible">
+                                        <ul class="px-6 py-5 bg-gradient-to-b from-base-700 to-base-800">
+                                            {{ children }}
+                                                <li class="
+                                                    block text-base-50 text-xl text-center hover:underline
+                                                    underline-offset-6 decoration-3
+                                                    ">
+                                                    {{ if url }}
+                                                        <a
+                                                            href="{{ url }}"
+                                                            class="
+                                                                block py-3 whitespace-nowrap
+                                                                {{ ['underline underline-offset-6 decoration-3' => is_current] | classes }}
+                                                            "
+                                                        >
+                                                    {{ else }}
+                                                        <span class="block py-3 whitespace-nowrap">
+                                                    {{ /if }}
+                                                    {{ title }}
+                                                    {{ if url }}
+                                                        </a>
+                                                    {{ else }}
+                                                        </span>
+                                                    {{ /if }}
+                                                </li>
+                                            {{ /children }}
+                                        </ul>
+                                    </div>
+                                </div>
+                            {{ /if }}
+                        </li>
+                    {{ /nav:main_navigation }}
+                </ul>
+            </nav>
+        </div>
+    {{ /partial:section }}
+</div>

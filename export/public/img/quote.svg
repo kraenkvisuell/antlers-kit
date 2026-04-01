@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="60px" height="60px" viewBox="0 0 60 60" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>icons / quote</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M0,28.2992701 L0,5 L24,5 L24,29.5255474 C24,44.0656934 15.1578947,52.649635 0.180451128,53 L0.180451128,41.0875912 C7.7593985,39.8613139 10.6466165,37.2335766 10.6466165,31.2773723 L10.6466165,28.2992701 L0,28.2992701 Z M36,28.2992701 L36,5 L60,5 L60,29.5255474 C60,44.0656934 51.1578947,52.649635 36.1804511,53 L36.1804511,41.0875912 C43.7593985,39.8613139 46.6466165,37.2335766 46.6466165,31.2773723 L46.6466165,28.2992701 L36,28.2992701 Z" id="path-1"></path>
+        <linearGradient x1="0%" y1="50%" x2="100%" y2="50%" id="linearGradient-3">
+            <stop stop-color="#E5A255" offset="0%"></stop>
+            <stop stop-color="#F8CB8D" offset="37.7732117%"></stop>
+            <stop stop-color="#FDD295" offset="59.4246749%"></stop>
+            <stop stop-color="#E5A255" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="icons-/-quote" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <mask id="mask-2" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+        <use id="„" fill="#B76C41" xlink:href="#path-1"></use>
+        <g id="farben-/-goldverlauf" mask="url(#mask-2)" fill="url(#linearGradient-3)">
+            <rect id="Rectangle-2" x="0" y="0" width="60" height="60"></rect>
+        </g>
+    </g>
+</svg>

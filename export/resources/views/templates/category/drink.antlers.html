@@ -1,0 +1,59 @@
+<div class="
+    w-full flex flex-col items-center gap-y-8
+    {{ switch between='md:flex-row|md:flex-row-reverse' }}
+">
+    <div class="relative w-full block md:flex-1">
+        <div class="w-full aspect-square">
+            <div
+                class="relative bg-radial w-full h-full from-base-100 to-base-300"
+                x-data="{
+                    visibleImage: 0,
+                    numberOfImages: {{ drink.images | count }},
+                    init() {
+                        if (this.numberOfImages > 1) {
+                            setInterval(() => {
+                                let nextIndex = this.visibleImage + 1
+                                if (nextIndex >= this.numberOfImages) {
+                                    nextIndex = 0
+                                }
+
+                                this.visibleImage = nextIndex
+                            }, 3000)
+                        }
+                    }
+                }"
+            >
+                {{ drink.images scope="image" }}
+                    <div
+                        class="absolute inset-0 flex items-center justify-center"
+                        x-cloak
+                        x-show="visibleImage === {{ index }}"
+                        x-transition.duration.700ms
+                    >
+                        <div class="w-3/4 h-3/4">
+                            <img
+                                src="{{ image | cdn_image }}"
+                                alt="{{ drink.title }}"
+                                class="w-full h-full object-contain"
+                            />
+                        </div>
+                    </div>
+                {{ /drink.images }}
+            </div>
+        </div>
+    </div>
+
+    <div class="w-full md:flex-1 @container flex items-center justify-center">
+        <div class="w-full md:p-[10%] flex flex-col gap-3">
+            <h3 class="font-headline text-2xl @md:text-3xl @lg:text-4xl">
+                {{ drink.title }}
+            </h3>
+
+            <div class="editor">
+                {{ drink.text }}
+            </div>
+
+            {{ partial:templates.category.drink.details }}
+        </div>
+    </div>
+</div>

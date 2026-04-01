@@ -1,0 +1,12 @@
+{{ partial:section width="wide" }}
+    <div class="
+        editor text-lg hyphens-auto md:hyphens-none
+        {{ partial:set-margin-classes }}
+    ">
+        {{ set.text }}
+            {{ if type === 'text' }}
+                {{ text }}
+            {{ /if }}
+        {{ /set.text }}
+    </div>
+{{ /partial:section }}

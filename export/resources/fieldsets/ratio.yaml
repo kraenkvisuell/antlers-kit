@@ -1,0 +1,53 @@
+title: Seitenverhältnis
+fields:
+  -
+    handle: force_ratio
+    field:
+      type: toggle
+      display: 'Seitenverhältnis erzwingen'
+      localizable: false
+      instructions: 'Gesetzte Fokuspunkte haben nur einen Effekt, wenn ein Seitenverhältnis erzwungen wird.'
+  -
+    handle: ratio
+    field:
+      options:
+        -
+          key: '2:1'
+          value: '2:1'
+        -
+          key: '16:9'
+          value: '16:9'
+        -
+          key: '16:10'
+          value: '16:10'
+        -
+          key: '5:3'
+          value: '5:3'
+        -
+          key: '4:3'
+          value: '4:3'
+        -
+          key: '1:1'
+          value: Quadrat
+        -
+          key: '3:4'
+          value: '3:4'
+        -
+          key: '3:5'
+          value: '3:5'
+        -
+          key: '10:16'
+          value: '10:16'
+        -
+          key: '9:16'
+          value: '9:16'
+        -
+          key: '1:2'
+          value: '1:2'
+      searchable: false
+      default: '1:1'
+      type: select
+      display: Seiternverhältnis
+      localizable: false
+      if:
+        force_ratio: 'equals true'

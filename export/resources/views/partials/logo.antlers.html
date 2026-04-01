@@ -1,0 +1,43 @@
+<div class="relative h-full w-36">
+    <div class="w-full absolute top-0 left-0">
+        <a
+            href="/"
+            class="w-full"
+            aria-label="Logo Homepage-Link"
+        >
+            <div
+                class="absolute -top-7.5 left-0 w-full transition-all duration-700"
+                x-cloak
+                x-bind:class="{
+                    'opacity-100 scale-100': !scrolledABit,
+                    'opacity-0 scale-0': scrolledABit,
+                }"
+            >
+                {{ settings.main_logo }}
+                    <img
+                        class="w-full"
+                        src="{{ url }}"
+                        alt="{{ alt }}"
+                    />
+                {{ /settings.main_logo }}
+            </div>
+
+            <div
+                class="absolute top-4.5 left-0 w-full transition-all duration-700"
+                x-cloak
+                x-bind:class="{
+                    'opacity-100 scale-100': scrolledABit,
+                    'opacity-0 scale-0': !scrolledABit,
+                }"
+            >
+                {{ settings.secondary_logo }}
+                    <img
+                        class="w-full"
+                        src="{{ url }}"
+                        alt="{{ alt }}"
+                    />
+                {{ /settings.secondary_logo }}
+            </div>
+        </a>
+    </div>
+</div>

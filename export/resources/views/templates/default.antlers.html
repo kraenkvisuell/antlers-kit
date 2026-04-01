@@ -1,0 +1,11 @@
+<div class="min-h-screen w-full h-full">
+    {{ partial:hero-part }}
+    {{ partial:main-part }}
+        {{ partial:mini-navigation }}
+        {{ main_content scope="set" }}
+            <div class="relative {{ if set.type !== 'quote'}} z-10 bg-white {{ else}} z-0 {{ /if }}">
+                {{ partial src="sets/{set.type}" }}
+            </div>
+        {{ /main_content }}
+    {{ /partial:main-part }}
+</div>

@@ -1,0 +1,49 @@
+<div
+    class="relative bg-cover bg-center flex items-center py-5 bg-base-800"
+    style="background-image:url('{{ settings.website_bg | cdn_image('contain-max=1500x1500') }}')"
+>
+    {{ partial:section width="wide" }}
+        <div class="flex flex-col gap-10 sm:gap-4 sm:flex-row sm:items-center justify-between">
+            <div class="flex sm:flex-col gap-10 sm:gap-2">
+                <nav class="flex flex-col sm:flex-row flex-wrap gap-3 text-sm font-semibold">
+                    {{ nav:secondary_navigation }}
+                        <a
+                            href="{{ url }}"
+                            class="text-white hover:text-base-200/90 transition-color duration-700"
+                        >
+                            {{ title }}
+                        </a>
+                    {{ /nav:secondary_navigation }}
+                </nav>
+
+                <nav class="flex flex-col sm:flex-row gap-3 text-sm font-semibold">
+                    {{ nav:footer_navigation }}
+                        <a
+                            href="{{ url }}"
+                            class="text-white hover:text-base-200/90 transition-color duration-700"
+                        >
+                            {{ title }}
+                        </a>
+                    {{ /nav:footer_navigation }}
+                </nav>
+            </div>
+
+            <div class="self-end">
+                {{ settings.partners scope="partner" }}
+                    <div class="w-40 sm:w-50">
+                        <a
+                            href="{{ partner.link }}"
+                            target="_blank"
+                            title="{{ partner.title }}"
+                        >
+                            <img
+                                src="{{ partner.logo }}"
+                                alt="{{ partner.title }} Logo"
+                            />
+                        </a>
+                    </div>
+                {{ /settings.partners }}
+            </div>
+        </div>
+    {{ /partial:section }}
+</div>

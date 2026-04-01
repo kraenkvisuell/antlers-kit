@@ -1,0 +1,12 @@
+title: 'Embed: Video'
+fields:
+  -
+    handle: embed_code
+    field:
+      type: code
+      display: 'Embed Code'
+      localizable: false
+  -
+    import: ratio
+  -
+    import: captions

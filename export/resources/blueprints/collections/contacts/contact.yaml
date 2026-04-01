@@ -1,0 +1,102 @@
+title: Kontakt
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: title
+            field:
+              type: text
+              required: true
+              validate:
+                - required
+              display: Name
+          -
+            handle: portrait
+            field:
+              container: assets
+              folder: kontakte
+              max_items: 1
+              type: assets
+              display: Portraitbild
+              max_files: 1
+          -
+            handle: job_title
+            field:
+              type: text
+              display: Job-Bezeichnung
+          -
+            handle: phone
+            field:
+              type: text
+              display: Telefon
+          -
+            handle: fax
+            field:
+              type: text
+              display: Fax
+          -
+            handle: email
+            field:
+              input_type: email
+              type: text
+              display: E-Mail
+          -
+            handle: contact_area
+            field:
+              collections:
+                - contact_areas
+              mode: select
+              max_items: 1
+              type: entries
+              display: Kontakt-Bereich
+  sidebar:
+    display: Sidebar
+    sections:
+      -
+        fields:
+          -
+            handle: slug
+            field:
+              type: slug
+              localizable: true
+              validate: 'max:200'
+  Favicons:
+    display: Favicons
+    sections:
+      -
+        fields:
+          -
+            handle: favicons
+            field:
+              type: favicons
+              listable: false
+              display: Favicons
+  'SEO Meta':
+    display: 'SEO Meta'
+    sections:
+      -
+        fields:
+          -
+            handle: seo
+            field:
+              type: seo_pro
+              listable: false
+              display: SEO
+  'SEO Previews':
+    display: 'SEO Previews'
+    sections:
+      -
+        fields:
+          -
+            handle: seo_previews
+            field:
+              type: seo_pro_previews
+              listable: false
+              display: 'SEO Previews'
+              localizable: true
+              hide_display: true
+              unless:
+                seo.enabled: 'equals false'
