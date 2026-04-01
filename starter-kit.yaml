@@ -6,7 +6,6 @@ export_paths:
   - app/Models/User.php
   - app/Modifiers/CdnImage.php
   - app/Providers
-  - addons/kraenkvisuell
   - content
   - config/auth.php
   - config/filesystems.php
@@ -32,7 +31,6 @@ dependencies:
   livewire/livewire: ^4.2
   statamic/eloquent-driver: ^5.1
   statamic/seo-pro: ^7.0
-  statamic-rad-pack/runway: ^9.0
   symfony/http-client: ^8.0
   symfony/postmark-mailer: ^8.0
   varsuite/statamic-resend-form-submissions: ^1.1
