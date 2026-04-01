@@ -29,36 +29,56 @@ return [
     */
 
     'disks' => [
+        'base' => [
+            'driver' => 'local',
+            'root' => base_path(),
+        ],
+
+        'stubs' => [
+            'driver' => 'local',
+            'root' => base_path('stubs'),
+        ],
 
         'local' => [
             'driver' => 'local',
             'root' => storage_path('app/private'),
             'serve' => true,
             'throw' => false,
-            'report' => false,
         ],
 
         'public' => [
             'driver' => 'local',
-            'root' => storage_path('app/public'),
-            'url' => rtrim(env('APP_URL', 'http://localhost'), '/') . '/storage',
+            'root' => public_path(),
+            'url' => env('APP_URL') . '/storage',
+            'visibility' => 'public',
+            'throw' => false,
+        ],
+
+        'placeholders' => [
+            'driver' => 'local',
+            'root' => public_path('placeholders'),
+            'url' => '/placeholders',
             'visibility' => 'public',
             'throw' => false,
             'report' => false,
         ],
 
-        's3' => [
-            'driver' => 's3',
-            'key' => env('AWS_ACCESS_KEY_ID'),
-            'secret' => env('AWS_SECRET_ACCESS_KEY'),
-            'region' => env('AWS_DEFAULT_REGION'),
-            'bucket' => env('AWS_BUCKET'),
-            'url' => env('AWS_URL'),
-            'endpoint' => env('AWS_ENDPOINT'),
-            'use_path_style_endpoint' => env('AWS_USE_PATH_STYLE_ENDPOINT', false),
+        'logos' => [
+            'driver' => 'local',
+            'root' => public_path('logos'),
+            'url' => '/logos',
+            'visibility' => 'public',
             'throw' => false,
             'report' => false,
-            // 'visibility' => 'public', // https://statamic.dev/assets#container-visibility
+        ],
+
+        'favicons' => [
+            'driver' => 'local',
+            'root' => public_path('favicons'),
+            'url' => '/favicons',
+            'visibility' => 'public',
+            'throw' => false,
+            'report' => false,
         ],
 
         'assets' => [
@@ -72,6 +92,34 @@ return [
             'use_path_style_endpoint' => env('CLOUD_USE_PATH_STYLE_ENDPOINT', false),
             'throw' => false,
             'root' => env('CLOUD_ROOT') . '/assets',
+            'visibility' => 'public',
+        ],
+
+        'attachments' => [
+            'driver' => 's3',
+            'key' => env('CLOUD_ACCESS_KEY_ID'),
+            'secret' => env('CLOUD_SECRET_ACCESS_KEY'),
+            'region' => env('CLOUD_DEFAULT_REGION'),
+            'bucket' => env('CLOUD_BUCKET'),
+            'url' => env('CLOUD_URL'),
+            'endpoint' => env('CLOUD_ENDPOINT'),
+            'use_path_style_endpoint' => env('CLOUD_USE_PATH_STYLE_ENDPOINT', false),
+            'throw' => false,
+            'root' => env('CLOUD_ROOT') . '/attachments',
+            'visibility' => 'public',
+        ],
+
+        'baseS3' => [
+            'driver' => 's3',
+            'key' => env('CLOUD_ACCESS_KEY_ID'),
+            'secret' => env('CLOUD_SECRET_ACCESS_KEY'),
+            'region' => env('CLOUD_DEFAULT_REGION'),
+            'bucket' => env('CLOUD_BUCKET'),
+            'url' => env('CLOUD_URL'),
+            'endpoint' => env('CLOUD_ENDPOINT'),
+            'use_path_style_endpoint' => env('CLOUD_USE_PATH_STYLE_ENDPOINT', false),
+            'throw' => false,
+            'root' => env('CLOUD_ROOT'),
             'visibility' => 'public',
         ],
 
