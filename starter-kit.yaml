@@ -18,6 +18,7 @@ export_paths:
   - resources/blueprints
   - resources/css/site.css
   - resources/views
+  - stubs
   - public/build
   - public/img
   - public/vendor
