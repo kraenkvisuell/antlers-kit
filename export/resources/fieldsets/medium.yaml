@@ -1,0 +1,21 @@
+title: Medium
+fields:
+  -
+    handle: file
+    field:
+      container: assets
+      max_files: 1
+      type: assets
+      display: Datei
+  -
+    handle: force_ratio
+    field:
+      default: true
+      type: toggle
+      display: 'Seitenverhältnis erzwingen'
+  -
+    handle: ratio
+    field: ratio.ratio
+    config:
+      if:
+        force_ratio: 'equals true'

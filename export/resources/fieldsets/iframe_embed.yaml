@@ -1,0 +1,7 @@
+title: 'iframe Embed'
+fields:
+  -
+    handle: iframe
+    field:
+      type: code
+      display: iframe

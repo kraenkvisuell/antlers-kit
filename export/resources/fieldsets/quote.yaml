@@ -1,0 +1,35 @@
+title: Zitat
+fields:
+  -
+    handle: quote
+    field:
+      type: textarea
+      display: Zitat
+  -
+    handle: author
+    field:
+      type: text
+      display: Autor
+  -
+    handle: bg_image
+    field:
+      container: assets
+      max_files: 1
+      type: assets
+      display: Hintergrundbild
+  -
+    handle: icon
+    field:
+      options:
+        -
+          key: quote
+          value: Anführungszeichen
+        -
+          key: hops
+          value: Hopfen
+      inline: true
+      default: quote
+      type: radio
+      display: Icon
+  -
+    import: layer

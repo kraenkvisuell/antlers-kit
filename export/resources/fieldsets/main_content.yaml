@@ -1,57 +1,142 @@
-title: Haupt-Inhalt
+title: Hauptinhalt
 fields:
   -
-    handle: content
+    handle: main_content
     field:
+      type: replicator
+      display: Hauptinhalt
       collapse: accordion
       fullscreen: false
-      type: replicator
-      display: Inhalt
-      instructions: 'Füge einzelne Sektionen untereinander - sie können später umsortiert, bearbeitet, versteckt oder gelöscht werden.'
-      localizable: true
       sets:
-        sets:
-          display: Sets
+        neue_setgruppe:
+          display: 'Neue Setgruppe'
           sets:
             text:
               display: Text
-              icon: text-formatting-initial-letter
+              icon: fieldtype-textarea
               fields:
                 -
-                  import: headline
+                  import: less_margin_above
                 -
-                  import: main_bard
+                  import: bard_with_sets
                 -
-                  import: buttons
+                  import: less_margin_below
             image:
               display: Bild
-              icon: media-image-picture-orientation
+              icon: insert-image
               fields:
                 -
-                  import: headline
+                  import: less_margin_above
                 -
                   import: image
-            video:
-              display: 'Video (Embed)'
-              icon: social-youtube
+                -
+                  import: less_margin_below
+            image_text:
+              display: Bild/Text
+              icon: align-left
               fields:
                 -
-                  import: headline
+                  import: less_margin_above
                 -
-                  import: embed_video
+                  import: image_text
+                -
+                  import: less_margin_below
             cards:
-              display: Karten
+              display: Kästen
               icon: dashboard-layout
               fields:
                 -
-                  import: headline
-                -
                   import: cards
-            slideshow:
-              display: Slideshow
-              icon: media-image-picture-gallery
+                -
+                  import: has_paper_bg
+            promo_section:
+              display: Promo-Sektion
+              icon: alert-alarm-bell
+              fields:
+                -
+                  import: promo_section
+            next_events:
+              display: 'Nächste Events'
+              icon: calendar-date
               fields:
                 -
                   import: headline
                 -
-                  import: slideshow
+                  handle: all_events_link
+                  field:
+                    collections:
+                      - pages
+                    type: link
+                    display: 'Link zu allen Events'
+            all_events:
+              display: 'Alle Avents'
+              icon: calendar
+              fields: {  }
+            video:
+              display: Video
+              icon: fieldtype-video
+              fields:
+                -
+                  import: video
+            quote:
+              display: Zitat
+              icon: quote
+              fields:
+                -
+                  import: quote
+            timeline:
+              display: Timeline
+              icon: arrow-roadmap-path-flow
+              fields:
+                -
+                  import: timeline
+            link_buttons:
+              display: Link-Buttons
+              icon: link
+              fields:
+                -
+                  import: headline
+                -
+                  import: link_buttons
+            form:
+              display: Formular
+              icon: fieldtype-form
+              fields:
+                -
+                  import: headline
+                -
+                  handle: intro
+                  field: simple_bard.text
+                  config:
+                    display: Intro
+                -
+                  handle: form
+                  field:
+                    mode: select
+                    max_items: 1
+                    type: form
+                    display: Formular
+            all_categories:
+              display: 'Alle Kategorien'
+              icon: dashboard-layout
+              fields: {  }
+            all_contacts:
+              display: 'Alle Kontakte'
+              icon: fieldtype-user_groups
+              fields: {  }
+            downloads:
+              display: Downloads
+              icon: download
+              fields:
+                -
+                  import: downloads
+            iframe:
+              display: 'iframe Embed'
+              icon: fieldtype-html
+              fields:
+                -
+                  import: iframe_embed
+            suppliers_map:
+              display: Bezugsquellen-Karte
+              icon: map-search
+              fields: {  }

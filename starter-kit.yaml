@@ -17,6 +17,7 @@ export_paths:
   - helpers.php
   - lang
   - resources/blueprints
+  - resources/fieldsets
   - resources/css/site.css
   - resources/views
   - public/build

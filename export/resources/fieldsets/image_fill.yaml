@@ -1,0 +1,16 @@
+title: Bild-Einpassung
+fields:
+  -
+    handle: image_fill
+    field:
+      options:
+        -
+          key: cover
+          value: 'Ausfüllen (Bereiche werden evt. abgeschnitten)'
+        -
+          key: contain
+          value: Einpassen
+      inline: true
+      default: cover
+      type: radio
+      display: Bild-Einpassung

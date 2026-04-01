@@ -1,0 +1,33 @@
+title: Link-Buttons
+fields:
+  -
+    handle: links
+    field:
+      collapse: accordion
+      fullscreen: false
+      type: replicator
+      display: Links
+      sets:
+        neue_setgruppe:
+          display: 'Neue Setgruppe'
+          sets:
+            link:
+              display: Link
+              icon: link
+              fields:
+                -
+                  handle: link_text
+                  field:
+                    type: text
+                    display: Link-Text
+                -
+                  handle: link
+                  field:
+                    collections:
+                      - pages
+                      - categories
+                    type: link
+                    display: Link
+                    container: assets
+                -
+                  import: link_icons

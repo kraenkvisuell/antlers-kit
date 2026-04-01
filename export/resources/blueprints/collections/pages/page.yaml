@@ -33,11 +33,7 @@ tabs:
       -
         fields:
           -
-            handle: favicons
-            field:
-              type: favicons
-              listable: false
-              display: Favicons
+            import: favicons
   'SEO Meta':
     display: 'SEO Meta'
     sections:

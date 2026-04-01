@@ -1,0 +1,20 @@
+title: 'Einfacher Bard'
+fields:
+  -
+    handle: text
+    field:
+      buttons:
+        - bold
+        - italic
+        - unorderedlist
+        - orderedlist
+        - anchor
+      toolbar_mode: floating
+      fullscreen: false
+      link_collections:
+        - pages
+      container: assets
+      remove_empty_nodes: trim
+      type: bard
+      display: Text
+      instructions: '"cmd + click" in eine Zeile öffnet direkt die Editor-Buttons, um z.B. eine Tabelle o.ä. einzufügen.'

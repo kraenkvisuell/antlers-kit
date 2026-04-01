@@ -1,0 +1,16 @@
+title: Layer
+fields:
+  -
+    handle: layer
+    field:
+      options:
+        -
+          key: light
+          value: Hell
+        -
+          key: dark
+          value: Dunkel
+      inline: true
+      default: light
+      type: radio
+      display: Layer

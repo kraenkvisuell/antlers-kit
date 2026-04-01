@@ -1,0 +1,7 @@
+title: 'Hat hellen Hintergrund'
+fields:
+  -
+    handle: has_light_bg
+    field:
+      type: toggle
+      display: 'Hat hellen Hintergrund'

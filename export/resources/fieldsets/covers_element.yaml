@@ -1,0 +1,7 @@
+title: 'Füllt die gesamte Fläche aus'
+fields:
+  -
+    handle: covers_element
+    field:
+      type: toggle
+      display: 'Füllt gesamtes Element aus'

@@ -1,31 +1,103 @@
 title: Hero
 fields:
   -
-    handle: bg_medium
+    handle: has_hero
     field:
-      max_files: 1
-      container: assets
-      type: assets
-      display: Hintergrund-Medium
-      instructions: 'MP4 oder Bilddatei. Fallback für die Desktop-Variante, falls dort nichts eigenes hinterlegt wird.'
-      localizable: false
+      type: toggle
+      display: 'Hat Hero'
       width: 50
-      instructions_position: below
-      validate:
-        - 'mimes:jpg,jpeg,png,gif,webp,mp4,webm'
-      show_set_alt: false
   -
-    handle: bg_medium_desktop
+    handle: hero_size
     field:
-      max_files: 1
-      container: assets
-      type: assets
-      display: 'Hintergrund-Medium (Desktop)'
-      instructions: 'MP4 oder Bilddatei.'
-      localizable: false
+      options:
+        -
+          key: small
+          value: Klein
+        -
+          key: medium
+          value: Mittel
+        -
+          key: fullscreen
+          value: Fullscreen
+      searchable: false
+      default: small
+      type: select
+      display: Hero-Größe
       width: 50
-      instructions_position: below
-      validate:
-        - 'mimes:jpg,jpeg,png,gif,webp,mp4,webm'
-      show_set_alt: false
-  
+  -
+    handle: hero_slides
+    field: slideshow.slides
+    config:
+      display: Hero-Slideshow
+      sets:
+        neue_setgruppe:
+          display: 'Neue Setgruppe'
+          instructions: null
+          icon: null
+          sets:
+            slide:
+              display: Slide
+              instructions: null
+              icon: insert-image
+              image: null
+              hide: null
+              fields:
+                -
+                  handle: image
+                  field:
+                    container: assets
+                    max_files: 1
+                    type: assets
+                    display: Bild
+                    width: 66
+                -
+                  handle: vertical_align
+                  field:
+                    options:
+                      -
+                        key: top
+                        value: Oben
+                      -
+                        key: center
+                        value: Mitte
+                      -
+                        key: bottom
+                        value: Unten
+                    searchable: false
+                    default: center
+                    type: select
+                    display: 'Vertikale Ausrichtung'
+                    width: 33
+                -
+                  handle: topline
+                  field:
+                    type: text
+                    display: Topline
+                -
+                  handle: headline
+                  field:
+                    type: textarea
+                    display: Headline
+                -
+                  handle: subline
+                  field:
+                    type: textarea
+                    display: Subline
+                -
+                  handle: link
+                  field:
+                    collections:
+                      - pages
+                    type: link
+                    display: Link
+                    width: 50
+                -
+                  handle: link_text
+                  field:
+                    type: text
+                    display: Link-Text
+                    width: 50
+                -
+                  import: layer
+      if:
+        has_hero: 'equals true'

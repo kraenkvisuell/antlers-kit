@@ -1,0 +1,57 @@
+title: Downloads
+fields:
+  -
+    handle: download_areas
+    field:
+      type: replicator
+      display: Download-Bereiche
+      collapse: accordion
+      button_label: 'Bereich hinzufügen'
+      sets:
+        neue_setgruppe:
+          display: 'Neue Setgruppe'
+          sets:
+            download_area:
+              display: Download-Bereich
+              icon: download
+              fields:
+                -
+                  handle: title
+                  field:
+                    type: text
+                    display: Titel
+                -
+                  handle: downloads
+                  field:
+                    type: replicator
+                    display: Downloads
+                    collapse: accordion
+                    button_label: 'Download hinzufügen'
+                    sets:
+                      neue_setgruppe:
+                        display: 'Neue Setgruppe'
+                        sets:
+                          downloads:
+                            display: Downloads
+                            icon: file-zip
+                            fields:
+                              -
+                                handle: file
+                                field:
+                                  container: assets
+                                  max_files: 1
+                                  type: assets
+                                  display: Datei
+                                  instructions: 'ZIP-Datei empfohlen'
+                              -
+                                handle: title
+                                field:
+                                  type: text
+                                  display: Titel
+                              -
+                                handle: preview_image
+                                field:
+                                  container: assets
+                                  max_files: 1
+                                  type: assets
+                                  display: Vorschau-Bild

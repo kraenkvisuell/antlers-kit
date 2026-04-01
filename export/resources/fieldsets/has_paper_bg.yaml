@@ -1,0 +1,7 @@
+title: 'Hat Papierhintergrund'
+fields:
+  -
+    handle: has_paper_bg
+    field:
+      type: toggle
+      display: 'Hat Papier-Hintergrund'

@@ -1,0 +1,23 @@
+title: Bildgröße
+fields:
+  -
+    handle: image_size
+    field:
+      options:
+        -
+          key: mini
+          value: Mini
+        -
+          key: small
+          value: Klein
+        -
+          key: medium
+          value: Mittel
+        -
+          key: full
+          value: 'Volle Breite'
+      searchable: false
+      default: full
+      type: select
+      display: Bildgröße
+      instructions: 'Hat Auswrikungen vor allem auf größeren Bildschirmen (auf Smartphones sind alle Größen außer "mini" gleich breit)'

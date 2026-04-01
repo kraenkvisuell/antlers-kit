@@ -1,0 +1,89 @@
+title: 'Bard mit Sets'
+fields:
+  -
+    handle: text
+    field:
+      buttons:
+        - h2
+        - h3
+        - h4
+        - h5
+        - h6
+        - bold
+        - italic
+        - unorderedlist
+        - orderedlist
+        - quote
+        - anchor
+        - table
+        - underline
+        - strikethrough
+        - small
+        - superscript
+        - subscript
+        - code
+        - codeblock
+        - horizontalrule
+        - alignleft
+        - aligncenter
+        - alignright
+      toolbar_mode: floating
+      fullscreen: false
+      container: assets
+      collapse: accordion
+      remove_empty_nodes: trim
+      type: bard
+      display: Text
+      link_collections:
+        - pages
+      instructions: '"cmd + click" in eine Zeile öffnet direkt die Editor-Buttons, um z.B. eine Tabelle o.ä. einzufügen.'
+      sets:
+        all_sets:
+          display: 'Alle Sets'
+          sets:
+            details:
+              display: Aufklapper
+              icon: fieldtype-select
+              fields:
+                -
+                  handle: details
+                  field:
+                    type: replicator
+                    display: Aufklapp-Elemente
+                    sets:
+                      neue_setgruppe:
+                        display: 'Neue Setgruppe'
+                        sets:
+                          detail:
+                            display: Aufklapp-Element
+                            icon: fieldtype-select
+                            fields:
+                              -
+                                handle: summary
+                                field:
+                                  buttons:
+                                    - bold
+                                    - italic
+                                  toolbar_mode: floating
+                                  fullscreen: false
+                                  container: assets
+                                  remove_empty_nodes: trim
+                                  type: bard
+                                  display: Zusammenfassung
+                              -
+                                handle: text
+                                field:
+                                  buttons:
+                                    - h3
+                                    - bold
+                                    - italic
+                                    - unorderedlist
+                                    - orderedlist
+                                    - anchor
+                                  toolbar_mode: floating
+                                  fullscreen: false
+                                  container: assets
+                                  collapse: accordion
+                                  remove_empty_nodes: trim
+                                  type: bard
+                                  display: Text

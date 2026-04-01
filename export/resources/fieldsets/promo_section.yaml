@@ -1,0 +1,28 @@
+title: Promo-Sektion
+fields:
+  -
+    handle: bg_image
+    field:
+      container: assets
+      max_files: 1
+      type: assets
+      display: Hintergrundbild
+  -
+    handle: headline
+    field:
+      type: textarea
+      display: Headline
+  -
+    import: simple_bard
+  -
+    handle: link
+    field:
+      type: link
+      display: Link
+  -
+    handle: link_text
+    field:
+      type: text
+      display: Link-Text
+  -
+    import: layer

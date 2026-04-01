@@ -1,0 +1,7 @@
+title: 'Weniger Abstand oben'
+fields:
+  -
+    handle: less_margin_above
+    field:
+      type: toggle
+      display: 'Weniger Abstand oben'

@@ -13,7 +13,6 @@
     >
 
     {{ seo_pro:meta }}
-    {{ favicons:favicons }}
     {{ if environment == 'production' }}
         <meta
             name="google-site-verification"
@@ -68,10 +67,6 @@
     <main>
         {{ template_content }}
     </main>
-
-    <div>
-        {{ partial:footer-products }}
-    </div>
 
     <div>
         {{ partial:footer-promos }}

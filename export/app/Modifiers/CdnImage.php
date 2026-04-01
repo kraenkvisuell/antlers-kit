@@ -8,6 +8,10 @@ class CdnImage extends Modifier
 {
     public function index($value, $params, $context)
     {
+        if (!$value) {
+            return '#';
+        }
+
         if ($value['extension'] === 'svg') {
             return config('site.image_cloud')
                 . '/' . config('filesystems.disks.assets.root') . '/' . $value['path'];

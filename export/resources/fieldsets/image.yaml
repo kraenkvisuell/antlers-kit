@@ -3,14 +3,9 @@ fields:
   -
     handle: file
     field:
-      max_files: 1
       container: assets
+      max_files: 1
       type: assets
       display: Datei
-      localizable: true
-      validate:
-        - 'mimes:jpg,jpeg,png,gif,webp,webm,mp4,svg'
   -
-    import: captions
-  -
-    import: ratio
+    import: image_size

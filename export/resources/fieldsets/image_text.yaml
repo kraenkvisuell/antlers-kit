@@ -1,0 +1,63 @@
+title: 'Bild / Text'
+fields:
+  -
+    handle: mode
+    field:
+      options:
+        -
+          key: image
+          value: Bild
+        -
+          key: code
+          value: Embed-Code
+      inline: true
+      default: image
+      type: radio
+      display: Modus
+  -
+    handle: file
+    field:
+      container: assets
+      max_files: 1
+      type: assets
+      display: Datei
+      if:
+        mode: 'equals image'
+  -
+    handle: embed_code
+    field:
+      type: code
+      display: Embed-Code
+      if:
+        mode: 'equals code'
+  -
+    import: bard_with_sets
+  -
+    handle: element_order
+    field:
+      options:
+        -
+          key: image_text
+          value: 'Bild oben/links, Text unten/rechts'
+        -
+          key: text_image
+          value: 'Text oben/links, Bild unten/rechts'
+      searchable: false
+      default: image_text
+      type: select
+      display: Reihenfolge
+      width: 50
+  -
+    handle: image_size
+    field:
+      options:
+        -
+          key: mini
+          value: Mini
+        -
+          key: normal
+          value: Normal
+      default: normal
+      type: select
+      display: Bildgröße
+      width: 50

@@ -1,0 +1,9 @@
+title: Video
+fields:
+  -
+    handle: embed_code
+    field:
+      type: code
+      display: 'Embed Code'
+  -
+    import: ratio

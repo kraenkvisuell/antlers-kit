@@ -1,0 +1,16 @@
+title: Link-Icons
+fields:
+  -
+    handle: link_icon
+    field:
+      options:
+        -
+          key: apple
+          value: 'Apple (iOS)'
+        -
+          key: android
+          value: Android
+      clearable: true
+      searchable: false
+      type: select
+      display: Link-Icon

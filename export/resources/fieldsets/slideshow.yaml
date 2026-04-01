@@ -1,29 +1,55 @@
 title: Slideshow
 fields:
   -
-    import: ratio
-  -
     handle: slides
     field:
-      collapse: accordion
-      fullscreen: false
-      button_label: 'Slide hinuzfügen'
       type: replicator
       display: Slides
-      localizable: false
+      button_label: 'Slide hinzufügen'
+      collapse: accordion
       sets:
         neue_setgruppe:
           display: 'Neue Setgruppe'
           sets:
             slide:
               display: Slide
-              icon: media-image-picture-orientation
+              icon: insert-image
               fields:
                 -
-                  handle: file
-                  field: image.file
-                  config:
-                    validate:
-                      - 'mimes:jpg,jpeg,png,gif,webp,webm,mp4,svg'
+                  handle: image
+                  field:
+                    container: assets
+                    max_files: 1
+                    type: assets
+                    display: Bild
                 -
-                  import: captions
+                  handle: topline
+                  field:
+                    type: text
+                    display: Topline
+                -
+                  handle: headline
+                  field:
+                    type: textarea
+                    display: Headline
+                -
+                  handle: subline
+                  field:
+                    type: textarea
+                    display: Subline
+                -
+                  handle: link
+                  field:
+                    collections:
+                      - pages
+                    type: link
+                    display: Link
+                    width: 50
+                -
+                  handle: link_text
+                  field:
+                    type: text
+                    display: Link-Text
+                    width: 50
+                -
+                  import: layer
